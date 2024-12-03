@@ -1,0 +1,653 @@
+.type-selection {
+  position: relative;
+  /* z-index: 1000; */
+}
+.search-input {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.2rem;
+  color: white;
+  font-family: inherit;
+  margin: 20px 0;
+  outline-color: #f7f0f015;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -3px;
+  background-color: #212529;
+
+}
+.drop-down {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+}
+.drop-down.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  display: block;
+}
+
+.input-dropdown {
+  position: absolute;
+  left: -40px;
+  top: 50px;
+  width: 25vw;
+
+}
+
+.search-btn{
+  height: 1em;
+}
+.main-container
+.main-container h1 {
+  font-size: 52px;
+  font-family: sans-serif;
+  line-height: 78px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 700;
+  
+
+}
+
+.slide-1 {
+
+  position: relative;
+  display: none;
+  transform: translateX(100%);
+  transition: transform 6s ease-in-out;
+
+
+}
+
+.slide-1.active {
+  transform: translateX(0);
+  display: block;
+
+  left: 0;
+
+
+
+}
+
+.translate {
+
+  transform: translateX(-100%);
+
+
+}
+
+.slide1-info {
+  z-index: 2;
+  position: absolute;
+  top: 28%;
+  left: 10%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(196, 189, 189);
+  font-family: sans-serif;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  background-color: red;
+  height: 20px;
+  width: 4px;
+}
+
+.image-1 {
+  width: 100%;
+  height: 900px;
+  object-fit: fill;
+
+}
+
+.left-btn {
+  width: 50px;
+  height: 50px;
+  left: 0;
+}
+.left-path{
+  width: 100%;
+  height: 100%;
+}
+.right-btn {
+  width: 50px;
+  height: 50px;
+  
+  right: 0;
+
+}
+
+.btn {
+  position: absolute;
+  top: 400px;
+
+}
+
+.flex-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+}
+
+.imdb-score {
+  color: aqua;
+  font-size: 1.2rem;
+  border: 3px solid aqua;
+  padding: 7px;
+  border-radius: 40px;
+}
+
+.IMDB {
+  color: aqua;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.year {
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+.genre {
+  color: #E90101;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.details {
+  margin-top: 50px;
+  width: 70%;
+}
+
+.play-btn {
+  font-size: 1.3rem;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  width: fit-content;
+  padding: 25px 70px;
+  margin-top: 30px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+
+
+.grid-title p {
+  margin: 20px 0;
+}
+
+.grid-title h1 {
+  font-size: 2rem;
+  color: #212529;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 30px;
+  margin-top: 40px
+}
+
+.container {
+  position: relative;
+  height: 400px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.image-container {
+  height: 100%;
+
+}
+
+/* .image-container a{
+ 
+} */
+.image-fix {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-info {
+  z-index: 5;
+  margin: 0 20px;
+  position: absolute;
+  top: 250px;
+}
+
+.movie-title {
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+.description {
+  color: #E90101;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+
+.dark-background {
+  position: absolute;
+  top: 0;
+  background: linear-gradient( to right,rgba(8, 8, 8, 0.582) 30%,rgba(0, 0, 0, 0.041));
+  width: 100%;
+  height: 100%;
+}
+
+.more-movies {
+  margin-top: 50px;
+  padding: 100px;
+  padding-top: 30px;
+  background-color: #212529;
+}
+
+.grid-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 100px;
+  margin-top: 20px;
+}
+
+.mv-container {
+  position: relative;
+ 
+  background-color: red;
+  box-shadow:0 0 8px rgba(0, 0, 0, 0.5) ;
+}
+
+.mv-description {
+  display: flex;
+  color: white;
+  margin-top: 10px;
+}
+
+.left-span {
+  color: white;
+  font-size: 1rem;
+
+}
+
+.left-span p {
+  color: red;
+}
+
+.duration {
+  display: flex;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.browse-btn {
+  margin-top: 150px;
+  transform: translateX(130%);
+}
+
+.section-4 {
+  position: relative;
+}
+
+.movie-display {
+  padding: 20px 70px;
+  background-color: #f8f9fa;
+}
+
+.movie-display h1 {
+  color: #212529;
+  font-size: 2rem;
+
+}
+
+.title {
+  color: white;
+
+}
+
+.information {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  text-align: center;
+
+}
+
+.grab-deal {
+  text-align: center;
+  color: white;
+  font-size: 3.2rem;
+}
+
+.brightness {
+  filter: brightness(30%);
+}
+
+.row-div {
+  /* text-align: center; */
+  background-color: white;
+  padding: 20px 30px;
+  width: 350px;
+}
+
+.row-div h3 {
+  font-family: 'Overpass', sans-serif;
+  font-size: 24px;
+  color: #212529;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 3rem;
+  color: #212529;
+}
+
+.price-duration {
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+
+.text {
+  margin-top: 50px;
+  font-size: 1.05rem;
+}
+
+.btn-el {
+  padding: 25px 50px;
+}
+
+#section-5 {
+  padding-top: -1000px;
+  background-color: #f8f9fa;
+}
+
+.contact-section {
+  padding: 30px 100px;
+  display: flex;
+  gap: 50px;
+
+}
+
+.ctact-img-container {
+  position: relative;
+  width: 45%;
+  height: 600px;
+}
+
+.color {
+  position: absolute;
+  background-color: #e9010115;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.grid-container {
+  max-width: 550px;
+  min-width: 200px;
+  background-color: #fff;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 30px;
+  row-gap: 20px;
+}
+
+.header-1 {
+  font-size: 2rem;
+  font-family: 'Overpass', sans-serif;
+  color: #212529;
+}
+
+.header-2 {
+  color: #212529;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.contact-grid input {
+  border: 1px solid #e901011f;
+  width: 100%;
+  height: 60px;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  outline: none;
+  border-radius: 2px;
+}
+
+.form-select {
+  border: 1px solid #e901011f;
+  width: 100%;
+  height: 60px;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  color: #777;
+  font-family: 'Overpass', sans-serif;
+  outline: none;
+  border-radius: 2px;
+}
+
+.submit {
+  width: 100%;
+}
+
+.section-6 {
+  padding: 30px 100px;
+  background-color: #111;
+  text-align: center;
+  color: white;
+}
+
+.section-6 p {
+  font-size: 1.2rem;
+}
+
+.email-input {
+  width: 400px;
+  padding: 28px 20px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  outline: none;
+}
+
+.form-control {
+  margin: 0;
+  margin-left: -5px;
+  padding: 28px;
+  padding-bottom: 29px;
+  padding-top: 27px;
+}
+
+.border-line {
+  border-bottom: 1px solid #222;
+  width: 100%;
+}
+
+.sub-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 70px;
+  margin-top: 50px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.column-1 {
+  text-align: left;
+  width: 30%;
+}
+
+.div-text {
+  color: #6c757d;
+  line-height: 30px;
+  list-style: disc;
+  margin-top: 10px;
+}
+
+.flex-column h1 {
+  color: #E90101;
+}
+
+.flex-column li::marker {
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.flex-column li a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 1.2rem;
+  line-height: 40px;
+
+}
+
+#language {
+  width: 50%;
+
+  color: #6c757d;
+  font-family: inherit;
+  font-size: 1.2rem;
+  outline: none;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid #222;
+  padding: 20px 50px 20px 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.2rem;
+  color: #777;
+  font-family: inherit;
+  margin: 20px 0;
+  outline-color: #e9010115;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -3px;
+  
+}
+
+footer {
+  background-color: #000;
+  font-family: inherit;
+
+}
+
+.footer-text {
+  color: #6c757d;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+.color-red{
+  color: #E90101;
+}
+.nav-btn.active{
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .fa{
+  font: normal normal normal 14px/1 FontAwesome;
+} */

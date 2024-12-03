@@ -1,0 +1,263 @@
+.section-1 {
+  padding: 250px 100px;
+}
+
+.type-selection {
+  position: relative;
+}
+.type-selection svg{
+  height: 1em;
+}
+
+.drop-down {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.drop-down.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  display: block;
+}
+.input-dropdown {
+  position: absolute;
+  left: -40px;
+  top: 50px;
+  width: 25vw;
+}
+.search-input {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.2rem;
+  color: white;
+  font-family: inherit;
+  margin: 20px 0;
+  outline-color: #f7f0f015;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -3px;
+  background-color: #212529;
+}
+
+
+.mv-summary-container {
+  display: flex;
+  gap: 50px;
+}
+
+.image-container {
+  height: 450px;
+  transition: 0.5s ease-in-out;
+  position: relative;
+  border-radius: 4px;
+}
+.image-container:hover{
+  transform: scale(1.1);
+  border: 1px solid #e50914;
+ 
+}
+.image-container:hover .dark-container{
+  opacity: 1;
+}
+
+.dark-container{
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(15, 15, 15, 0.699);
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.playButton{
+  position: absolute;
+  height: 50px;
+  fill: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  top: 48%;
+  left: 40%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.image-container:hover .playButton{
+  opacity: 1; 
+}
+.playButton:hover{
+  background-color: #e50914;
+  fill: black;
+  border: 1px solid #e50914;
+}
+.mv-img {
+  width: 100%;
+  height: 100%;
+}
+
+.mv-summary {
+  color: white;
+  width: 70%;
+}
+
+.mv-title {
+  font-size: 2rem;
+}
+
+.grey {
+  color: #727f92;
+}
+
+.flex-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.director {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.option-list {
+  margin-top: 20px;
+}
+
+svg {
+  height: 35px;
+}
+
+.play-btn {
+  font-size: 1.3rem;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  width: fit-content;
+  padding: 15px 30px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.mv-description {
+  width: 70%;
+  font-size: 1rem;
+  line-height: 24px;
+  margin-top: 30px;
+
+}
+
+.expanded {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+
+
+}
+
+.more-less-btn {
+  color: #e50914;
+  margin-top: 10px;
+
+}
+
+.more-less-div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+iframe {
+  margin-top: 30px;
+  border: 1px solid #e50914;
+  border-radius: 11px;
+}
+
+.trailer {
+  color: white;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.svg-inline {
+  color: white;
+  height: 15px;
+  margin-top: 5px;
+
+}
+
+.watch-list {
+  position: relative;
+  margin-top: 5px;
+}
+
+.mark {
+  margin-top: 5px;
+  position: relative;
+}
+
+.watchlist-tooltip {
+  position: absolute;
+  background-color: #727f92;
+  padding: 10px 10px;
+  white-space: nowrap;
+  border-radius: 4px;
+  top: -55px;
+  left: -47px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.watchlist-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 58px;
+  border-top: 0.3em solid;
+  border-right: .3em solid transparent;
+  border-left: .3em solid transparent;
+  color: #727f92;
+  font-size: 30px;
+  
+}
+.watch-list:hover .watchlist-tooltip{
+  opacity: 1;
+}
+.trailer:hover .watchlist-tooltip{
+  opacity: 1;
+}
+.watchlist-tooltip.tooltip{
+  position: absolute;
+  font-size: 16px;
+}
+.mark:hover .watchlist-tooltip{
+  opacity: 1;
+}
+.trailer-tooltip::before{
+right: 48px;
+}
+.trailer-tooltip{
+ left: -35px; 
+}
+.watchTrailer{
+  color: white;
+  margin-top: 50px;
+  font-size: 1.3rem;
+  position: relative;
+}
