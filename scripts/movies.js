@@ -1256,7 +1256,20 @@ export const movies = [
     director:'Ridely Scott'
   },
 
-
+  {
+    id: '4e',
+    name: 'Meet me next Christmas',
+    duration: '109 mins',
+    rating: 'PG16',
+    genre: 'Romance',
+    Image: 'images/meet-me-next-xmas.jpg',
+    type: '2',
+    code: '4CV41hoyS8A?si=vfpGCBF-rOcEQ9gd',
+    summary: `Leonard Shelby, an insurance investigator, suffers from anterograde amnesia and uses notes and tattoos to hunt for the man he thinks killed his wife, which is the last thing he remembers.`,
+    year: '2000',
+    director:'Ridely Scott',
+    sort:'Trending'
+  },
 
 ]
 
@@ -1269,3 +1282,14 @@ export function getMovie(movieId) {
   });
   return matchingMovie
 }
+export function runMenu5Btn(){
+  const menu5Btn = document.getElementById('menu5-btn');
+  const menu5Content = document.getElementById('menu5-content');
+  menu5Btn.addEventListener('click',()=>{
+    menu5Content.classList.toggle('active');
+  });
+  document.addEventListener('click',(event)=>{
+    if(!menu5Btn.contains(event.target)&&!menu5Content.contains(event.target)){
+      menu5Content.classList.remove('active')
+    }
+  })};

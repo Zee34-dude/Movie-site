@@ -1,4 +1,3 @@
-
 .more-movies {
   margin-top: 50px;
   padding: 100px;
@@ -55,7 +54,7 @@
 
 .duration {
   display: flex;
-  
+
 }
 
 .movie-title {
@@ -73,12 +72,21 @@
 
 }
 
-.ribbon {
+.js-watch-btn {
   position: absolute;
   left: 10px;
   font-size: 2rem;
   color: white;
   opacity: 0.3;
+
+}
+.js-watch-btn:hover{
+  opacity:0.8
+
+}
+.js-watch-btn.active {
+  color: #E50914;
+  opacity: 1;
 }
 
 .image-container:hover {
@@ -174,7 +182,7 @@ svg {
   transition: 0.1s ease-in-out;
 }
 
-.dropdown-menu  a {
+.dropdown-menu a {
   text-decoration: none;
   color: #d8d5d5;
   font-size: 1.1rem;

@@ -1,13 +1,16 @@
 
 import { getMovie } from "./movies.js";
+import { runMenu5Btn } from "./movies.js";
+import { addToWatchlist, watchlist, removeFromWatchlist } from "./watchlist.js";
 const url = new URL(window.location.href);
 const movieId = url.searchParams.get('movieId')
 const movie = getMovie(movieId);
 
+function renderMoviePage(){
 let movieSummary = ''
 movieSummary = `
 
-<div class="mv-summary-container">
+<div class="mv-summary-container ">
         <div class="image-container">
           <img class="mv-img" src="${movie.Image}" alt="">
           <div class="dark-container"></div>
@@ -29,14 +32,10 @@ movieSummary = `
           </div>
           <div class="option-list flex-row">
             <button class="play-btn">Play Movie</button>
-            <span class="watch-list">
-              <svg aria-hidden="true" class="rkbrtb0 rkbrtb1 rkbrtb3 _1v25wbq5k" fill="currentColor" height="48"
-                viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M38 6V40.125L24.85 33.74L23.5 33.065L22.15 33.74L9 40.125V6H38ZM38 3H9C8.20435 3 7.44129 3.31607 6.87868 3.87868C6.31607 4.44129 6 5.20435 6 6V45L23.5 36.5L41 45V6C41 5.20435 40.6839 4.44129 40.1213 3.87868C39.5587 3.31607 38.7957 3 38 3Z"
-                  fill="currentColor"></path>
-              </svg>
-              <div class="watchlist-tooltip">Add to Watchlist</div>
+            <span class="watch-list js-watch-list" data-movie-id="${movie.id}">
+              <svg data-v-6419283a="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="ribbon svg-inline--fa fa-bookmark ribbon--left"><path data-v-6419283a="" fill="currentColor" d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" class=""></path>
+               </svg>                 
+            <div id="watch-list" class="watchlist-tooltip">Add to Watchlist</div>
             </span>
             <span class="trailer">
               <svg aria-hidden="true" class="rkbrtb0 rkbrtb1 rkbrtb3 _1v25wbq5k" fill="currentColor" height="48"
@@ -100,13 +99,37 @@ moreDiv.addEventListener('click', () => {
     svg.style.transform = `rotate(${360}deg)`
   }
 });
-const menu5Btn = document.getElementById('menu5-btn');
-const menu5Content = document.getElementById('menu5-content');
-menu5Btn.addEventListener('click',()=>{
-  menu5Content.classList.toggle('active');
-});
-document.addEventListener('click',(event)=>{
-  if(!menu5Btn.contains(event.target)&&!menu5Content.contains(event.target)){
-    menu5Content.classList.remove('active')
+const watchBtn = document.querySelector('.js-watch-list')
+const activeColor = document.querySelector('.ribbon')
+const watchToolTip=document.getElementById('watch-list')
+watchlist.forEach((movieItem) => {
+  if (movieItem.movieId === movieId) {
+   activeColor.classList.add('active')
+    watchToolTip.innerHTML='Remove from Watchlist'
+    watchToolTip.classList.add('active')
+  }
+  else{
+    watchToolTip.innerHTML=`Add to Watchlist`
   }
 })
+
+
+watchBtn.addEventListener('click', () => {
+  const {movieId} = watchBtn.dataset
+    if(activeColor.classList.contains('active')){
+      activeColor.classList.remove('active')
+      removeFromWatchlist(movieId)
+      renderMoviePage()
+    }
+    else{
+      activeColor.classList.add('active')
+      addToWatchlist(movieId)
+      renderMoviePage()
+    }
+
+});
+};
+renderMoviePage()
+
+
+

@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -34,7 +35,7 @@ nav {
 
 nav ul {
   display: flex;
-  width: 70%;
+  width: 75%;
   justify-content: center;
   align-items: center;
 
@@ -99,5 +100,102 @@ nav ul a {
   text-decoration: none;
   color: white;
   ;
+
+}
+.type-selection {
+  position: relative;
+  /* z-index: 1000; */
+}
+.type-selection svg{
+  height: 1em;
+}
+
+.drop-down {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.genre-drop-down {
+  left: 40px;
+}
+
+.drop-down.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  display: block;
+}
+
+.drop-down:hover {
+  cursor: pointer;
+}
+
+
+.dropdown-menu {
+  position: fixed;
+  width: 250px;
+  background-color: #212529;
+  list-style: none;
+  padding-top: 10px;
+  overflow-y: scroll;
+  height: 300px;
+  border-radius: 4px;
+}
+
+.type-selection:hover {
+  cursor: pointer;
+
+}
+
+.dropdown-menu li {
+  display: flex;
+  min-height: 48px;
+  padding-left: 10px;
+  margin: 11px 0 10px;
+  width: 100%;
+  align-items: center;
+
+}
+
+.dropdown-menu li:hover {
+  background-color: #2b3035;
+  transition: 0.1s ease-in-out;
+}
+
+.dropdown-menu  a {
+  text-decoration: none;
+  color: #d8d5d5;
+  font-size: 1.1rem;
+
+}
+
+.input-dropdown {
+  position: absolute;
+  left: -40px;
+  top: 50px;
+  width: 25vw;
+
+}
+
+.search-input {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.2rem;
+  color: white;
+  font-family: inherit;
+  margin: 20px 0;
+  outline-color: #f7f0f015;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -3px;
+  background-color: #212529;
 
 }

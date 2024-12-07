@@ -5,7 +5,8 @@
 .type-selection {
   position: relative;
 }
-.type-selection svg{
+
+.type-selection svg {
   height: 1em;
 }
 
@@ -26,12 +27,14 @@
   transform: translateY(0);
   display: block;
 }
+
 .input-dropdown {
   position: absolute;
   left: -40px;
   top: 50px;
   width: 25vw;
 }
+
 .search-input {
   width: 100%;
   padding: 20px 10px;
@@ -60,16 +63,18 @@
   position: relative;
   border-radius: 4px;
 }
-.image-container:hover{
+
+.image-container:hover {
   transform: scale(1.1);
   border: 1px solid #e50914;
- 
+
 }
-.image-container:hover .dark-container{
+
+.image-container:hover .dark-container {
   opacity: 1;
 }
 
-.dark-container{
+.dark-container {
   top: 0;
   bottom: 0;
   width: 100%;
@@ -78,7 +83,8 @@
   opacity: 0;
   transition: 0.5s ease-in-out;
 }
-.playButton{
+
+.playButton {
   position: absolute;
   height: 50px;
   fill: white;
@@ -89,14 +95,17 @@
   opacity: 0;
   transition: 0.5s ease-in-out;
 }
-.image-container:hover .playButton{
-  opacity: 1; 
+
+.image-container:hover .playButton {
+  opacity: 1;
 }
-.playButton:hover{
+
+.playButton:hover {
   background-color: #e50914;
   fill: black;
   border: 1px solid #e50914;
 }
+
 .mv-img {
   width: 100%;
   height: 100%;
@@ -137,6 +146,7 @@
 
 svg {
   height: 35px;
+
 }
 
 .play-btn {
@@ -217,47 +227,56 @@ iframe {
   white-space: nowrap;
   border-radius: 4px;
   top: -55px;
-  left: -47px;
+  right: -220%;
   opacity: 0;
   transition: 0.3s ease-in-out;
   font-size: 16px;
   pointer-events: none;
 }
-
+.watchlist-tooltip.active{
+  right: -285%;
+}
 .watchlist-tooltip::before {
   content: '';
   position: absolute;
   bottom: -8px;
-  right: 58px;
+  right: 45%;
   border-top: 0.3em solid;
   border-right: .3em solid transparent;
   border-left: .3em solid transparent;
   color: #727f92;
   font-size: 30px;
-  
+
 }
-.watch-list:hover .watchlist-tooltip{
+
+.watch-list:hover .watchlist-tooltip {
   opacity: 1;
 }
-.trailer:hover .watchlist-tooltip{
+
+.trailer:hover .watchlist-tooltip {
   opacity: 1;
 }
-.watchlist-tooltip.tooltip{
+
+.watchlist-tooltip.tooltip {
   position: absolute;
   font-size: 16px;
 }
-.mark:hover .watchlist-tooltip{
-  opacity: 1;
+
+.trailer-tooltip::before {
+  right: 48px;
 }
-.trailer-tooltip::before{
-right: 48px;
+
+.trailer-tooltip {
+  left: -35px;
 }
-.trailer-tooltip{
- left: -35px; 
-}
-.watchTrailer{
+
+.watchTrailer {
   color: white;
   margin-top: 50px;
   font-size: 1.3rem;
   position: relative;
+}
+
+.ribbon.active {
+  color: #e50914;
 }

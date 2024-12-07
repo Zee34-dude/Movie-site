@@ -1,0 +1,114 @@
+.watchlist-grid {
+  padding: 200px 150px 0;
+}
+
+.movie-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+.image-container{
+  width:200px ;
+  height: 251px;
+}
+img{
+  width: 100%;
+  height:100% ;
+}
+.grey {
+  color: #727F92
+}
+
+.flex-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.mv-title {
+  color: white;
+
+}
+
+svg {
+  height: 30px;
+  color: white;
+}
+
+.watch-list svg {
+  position: relative;
+  margin-top: 5px;
+  color: #E50914;
+}
+
+
+
+.mark {
+  margin-top: 5px;
+  position: relative;
+}
+.watchlist-div{
+  margin-top: 100px;
+}
+
+.watchlist-tooltip {
+  position: absolute;
+  background-color: #727f92;
+  padding: 10px 10px;
+  white-space: nowrap;
+  border-radius: 4px;
+  top: -55px;
+  left: -50px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  font-size: 0.85rem;
+  pointer-events: none;
+  
+}
+
+.watchlist-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 72px;
+  border-top: 0.3em solid;
+  border-right: .3em solid transparent;
+  border-left: .3em solid transparent;
+  color: #727f92;
+  font-size: 30px;
+
+}
+
+.watch-list:hover .watchlist-tooltip {
+  opacity: 1;
+}
+
+
+
+.watchlist-tooltip.tooltip {
+
+  position: absolute;
+  font-size: 0.8rem;
+  left: -30px;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 52px;
+  border-top: 0.3em solid;
+  border-right: .3em solid transparent;
+  border-left: .3em solid transparent;
+  color: #727f92;
+  font-size: 30px;
+}
+
+.mark:hover .watchlist-tooltip {
+  opacity: 1;
+
+}

@@ -27,8 +27,7 @@ export function runDropDownBtn() {
 
     if (!isActive &&!(menuContent===menu5Content)) {
       menuContent.classList.add('active');
-      overlay.classList.add('active')
-    
+      overlay.classList.add('active');
     }
     else if(!isActive){
       menuContent.classList.add('active');

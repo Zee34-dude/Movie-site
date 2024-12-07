@@ -2,7 +2,6 @@ import { movies } from "./movies.js";
 const url = new URL(window.location.href);
 const sortedId = url.searchParams.get('sort_by')
 export function sortMovies() {
-
   let newMovie = []
   movies.forEach((movie) => {
     if (sortedId) {
@@ -64,7 +63,7 @@ let optionSummary = ''
 sorts.forEach((option) => { 
   optionSummary+=
   `
-  <a href="movies.html${option.id}"class
+  <a href="popular.html${option.id}"class
   ="sort-options" data-sort-id="${option.id}"><li>${option.name}</li></a>`
   document.querySelector('.js-dropdown-menu').innerHTML=optionSummary
  

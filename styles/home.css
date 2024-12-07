@@ -1,7 +1,11 @@
+
+
+
 .type-selection {
   position: relative;
   /* z-index: 1000; */
 }
+
 .search-input {
   width: 100%;
   padding: 20px 10px;
@@ -18,6 +22,7 @@
   background-color: #212529;
 
 }
+
 .drop-down {
   position: absolute;
   top: 30px;
@@ -29,6 +34,7 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 
 }
+
 .drop-down.active {
   opacity: 1;
   visibility: visible;
@@ -44,11 +50,11 @@
 
 }
 
-.search-btn{
+.search-btn {
   height: 1em;
 }
-.main-container
-.main-container h1 {
+
+.main-container .main-container h1 {
   font-size: 52px;
   font-family: sans-serif;
   line-height: 78px;
@@ -56,42 +62,35 @@
   margin-bottom: 20px;
   color: white;
   font-weight: 700;
-  
+
 
 }
+
+.carousel {
+  overflow: hidden;
+}
+
+.div-container {
+  position:relative ;
+  display: inline-flex;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
 
 .slide-1 {
-
+  width: 100dvw;
+  object-fit: cover;
   position: relative;
-  display: none;
-  transform: translateX(100%);
-  transition: transform 6s ease-in-out;
-
-
 }
 
-.slide-1.active {
-  transform: translateX(0);
-  display: block;
-
-  left: 0;
-
-
-
-}
-
-.translate {
-
-  transform: translateX(-100%);
-
-
-}
 
 .slide1-info {
   z-index: 2;
   position: absolute;
   top: 28%;
   left: 10%;
+  color: white;
 }
 
 .title {
@@ -99,8 +98,8 @@
   font-size: 20px;
   color: rgb(196, 189, 189);
   font-family: sans-serif;
+  margin-bottom: 30px;
 }
-
 .title::before {
   content: '';
   position: absolute;
@@ -108,6 +107,9 @@
   background-color: red;
   height: 20px;
   width: 4px;
+}
+.slide1-info h1{
+  font-size: 3rem;
 }
 
 .image-1 {
@@ -120,18 +122,18 @@
 .left-btn {
   width: 50px;
   height: 50px;
-  left: 0;
+  left: 20px;
 }
-.left-path{
+
+.left-path {
   width: 100%;
   height: 100%;
 }
+
 .right-btn {
   width: 50px;
   height: 50px;
-  
-  right: 0;
-
+  left:1450px;
 }
 
 .btn {
@@ -146,7 +148,9 @@
   align-items: center;
 
 }
-
+.margin{
+  margin-top: 20px;
+}
 .imdb-score {
   color: aqua;
   font-size: 1.2rem;
@@ -163,7 +167,6 @@
 
 .year {
   color: white;
-  letter-spacing: 2px;
   font-size: 1.2rem;
 }
 
@@ -175,7 +178,11 @@
 
 .details {
   margin-top: 50px;
-  width: 70%;
+  width: 40%;
+  font-weight: 300;
+  line-height: 30px;
+ 
+  font-size: normal;
 }
 
 .play-btn {
@@ -252,7 +259,7 @@
 .dark-background {
   position: absolute;
   top: 0;
-  background: linear-gradient( to right,rgba(8, 8, 8, 0.582) 30%,rgba(0, 0, 0, 0.041));
+  background: linear-gradient(to right, rgba(8, 8, 8, 0.582) 30%, rgba(0, 0, 0, 0.041));
   width: 100%;
   height: 100%;
 }
@@ -274,9 +281,9 @@
 
 .mv-container {
   position: relative;
- 
+
   background-color: red;
-  box-shadow:0 0 8px rgba(0, 0, 0, 0.5) ;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .mv-description {
@@ -560,7 +567,7 @@
   outline-width: 1px;
   outline-style: solid;
   outline-offset: -3px;
-  
+
 }
 
 footer {
@@ -575,10 +582,12 @@ footer {
   padding: 20px;
   font-size: 1.2rem;
 }
-.color-red{
+
+.color-red {
   color: #E90101;
 }
-.nav-btn.active{
+
+.nav-btn.active {
   color: red;
 }
 
