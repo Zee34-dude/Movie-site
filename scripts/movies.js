@@ -126,66 +126,6 @@ export const movies = [
 
   },
   {
-    id: '1k',
-    name: 'Stranger Things',
-    duration: '5 Seasons',
-    rating: 'PG',
-    genre: 'Action',
-    Image: 'images/stranger things.jpeg',
-    type: '3',
-    code: 'b9EkMc79ZSU?si=ISMP7UYkNBmyfIiK',
-    summary: `Stranger Things is a supernatural action-drama TV series about a group of friends in the fictional 1980s town of Hawkins, Indiana who encounter supernatural forces and government secrets.`,
-    year: ' Since 2018',
-    director: 'Duffer Brothers',
-    sort: [
-      'horror',
-      'thrl',
-      'sci-fi',
-      '8',
-      '10s'
-    ],
-
-  },
-  
-  {
-    id: '4o',
-    name: 'Bojack Horseman',
-    duration: '6 Seasons',
-    rating: '13',
-    genre: 'Comedy',
-    Image: 'images/bojack.jpeg',
-    type: '3',
-    code: 'i1eJMig5Ik4?si=ZaxNmVFFGi4moz4F',
-    summary: `Meet the most beloved sitcom horse of the '90s ... 20 years later. Set in an L.A. where humans and anthropomorphic animal-people coexist, "BoJack Horseman" is about one man (well, horse-man) who peaked too early and must figure out what to do next. Starring Will Arnett, Amy Sedaris, Alison Brie, and Aaron Paul. BoJack Horseman, a Netflix original series, now streaming.`,
-    year: '2014',
-    sort: [
-      'drm',
-      'cmdy',
-      'animation',
-      '9'
-    ],
-    director: 'Francis Ford Coppola'
-  },
-  {
-    id: '4p',
-    name: 'SpongeBob SquarePants',
-    duration: '15 Seasons',
-    rating: 'FAM',
-    genre: 'Comedy',
-    Image: 'images/spongebob.jpeg',
-    type: '3',
-    code: '47ceXAEr2Oo?si=P86gITWIKlT323fk',
-    summary: `A yellow sea sponge named SpongeBob SquarePants, who enjoys being a cook at Krusty Krab, lives in the Pacific Ocean. He embarks on various adventures with his friends at Bikini Bottom.`,
-    year: '2008',
-    sort: [
-      'cmdy',
-      'animation',
-      'family',
-      '8'
-    ],
-    director: 'Stephen Hillenburg, Paul Tibbitt·'
-  },
-  {
     id: '4q',
     name: 'Arcane',
     duration: '2 Seasons',
@@ -1668,6 +1608,68 @@ export const movies = [
     ],
     director: 'Hwang Dong-hyuk'
   },
+  
+  {
+    id: '4m',
+    name: 'Hotel Transylvania',
+    duration: '101 min',
+    rating: 'FAM',
+    genre: 'Family/comedy',
+    Image: 'images/transylvania.jpeg',
+    type: '2',
+    code: 'q4RK3jY7AVk?si=kjMSnEpcCNNcriDW',
+    summary: `Count Dracula runs a high-end resort for monsters and is overprotective of his daughter, Mavis. When a human named Johnny enters the hotel, Dracula tries to prevent Mavis from falling for him.`,
+    year: '2023',
+    sort: [
+      'family',
+      'adv',
+      'animation',
+      'cmdy',
+      '6'
+    ],
+    director: 'Troy Quane, Nick Bruno'
+  },
+  {
+    id: '4k',
+    name: 'The Garfield Movie',
+    duration: '101 mins',
+    rating: 'FAM',
+    genre: 'Family,Comedy',
+    Image: 'images/garfield.jpeg',
+    type: '2',
+    code: 'IeFWNtMo1Fs?si=Is3bLa9-VuJL14mu',
+    summary: `After an unexpected reunion with his long-lost father, a scruffy street cat, Garfield is forced to leave his perfectly pampered life in order to take part in a high-stakes heist. And an incredible outdoor adventure begins!`,
+    year: '2023',
+    sort: [
+      'family',
+      'adv',
+      'animation',
+      'cmdy',
+      '5'
+    ],
+    director: 'Mark Dindal'
+  },
+  {
+    id: '4n',
+    name: 'Invincible',
+    duration: '3 Seasons',
+    rating: '16',
+    genre: 'Action',
+    Image: 'images/invincible.jpeg',
+    type: '3',
+    code: 'bfAVpuko5o?si=b4-_mr4QqD15dbp8',
+    summary: `Seventeen-year-old Mark Grayson is just like every guy his age, except that his father is Omni-Man, the most powerful superhero on the planet. As Mark develops powers of his own, he discovers his father's legacy may not be as heroic as it seems.`,
+    year: '2021',
+    sort: [
+      'action',
+      'adv',
+      'animation',
+      'hero',
+      '9'
+    ],
+    
+    director: 'Robert Kirkman'
+  },
   {
     id: '4b',
     name: 'True Detective',
@@ -2039,86 +2041,6 @@ export const movies = [
     director: 'Troy Quane, Nick Bruno'
   },
   {
-    id: '4m',
-    name: 'Hotel Transylvania',
-    duration: '101 min',
-    rating: 'FAM',
-    genre: 'Family/comedy',
-    Image: 'images/transylvania.jpeg',
-    type: '2',
-    code: 'q4RK3jY7AVk?si=kjMSnEpcCNNcriDW',
-    summary: `Count Dracula runs a high-end resort for monsters and is overprotective of his daughter, Mavis. When a human named Johnny enters the hotel, Dracula tries to prevent Mavis from falling for him.`,
-    year: '2023',
-    sort: [
-      'family',
-      'adv',
-      'animation',
-      'cmdy',
-      '6'
-    ],
-    director: 'Troy Quane, Nick Bruno'
-  },
-  {
-    id: '4k',
-    name: 'The Garfield Movie',
-    duration: '101 mins',
-    rating: 'FAM',
-    genre: 'Family,Comedy',
-    Image: 'images/garfield.jpeg',
-    type: '2',
-    code: 'IeFWNtMo1Fs?si=Is3bLa9-VuJL14mu',
-    summary: `After an unexpected reunion with his long-lost father, a scruffy street cat, Garfield is forced to leave his perfectly pampered life in order to take part in a high-stakes heist. And an incredible outdoor adventure begins!`,
-    year: '2023',
-    sort: [
-      'family',
-      'adv',
-      'animation',
-      'cmdy',
-      '5'
-    ],
-    director: 'Mark Dindal'
-  },
-  {
-    id: '4n',
-    name: 'Invincible',
-    duration: '3 Seasons',
-    rating: '16',
-    genre: 'Action',
-    Image: 'images/invincible.jpeg',
-    type: '3',
-    code: 'bfAVpuko5o?si=b4-_mr4QqD15dbp8',
-    summary: `Seventeen-year-old Mark Grayson is just like every guy his age, except that his father is Omni-Man, the most powerful superhero on the planet. As Mark develops powers of his own, he discovers his father's legacy may not be as heroic as it seems.`,
-    year: '2021',
-    sort: [
-      'action',
-      'adv',
-      'animation',
-      'hero',
-      '9'
-    ],
-
-    director: 'Robert Kirkman'
-  },
-  {
-    id: '4s',
-    name: 'Avatar the Last Airbender',
-    duration: '3 seasons',
-    rating: 'FAM',
-    genre: 'Animation',
-    Image: 'images/tv-shows/avatar-last-bender.jpeg',
-    type: '3',
-    code: 'ooVvH2IYz0w?si=8WSAeJ8oUcZgUo-k',
-    summary: `Four elemental nations are at war with each other and only the Avatar, master of all four elements, can restore peace. The new Avatar comes in the form of Aang who strives to fulfil his destiny.`,
-    year: '2005-2008',
-    sort: [
-      'animation',
-      'action',
-      '9',
-
-    ],
-    director: 'Michael Dante DiMartino, Bryan Konietzko, Aaron Ehasz'
-  },
-  {
     id: '4t',
     name: 'Adventure Time',
     duration: '10 Seasons',
@@ -2175,6 +2097,86 @@ export const movies = [
     ],
     director: 'Will Gluck'
   },
+  {
+    id: '4s',
+    name: 'Avatar the Last Airbender',
+    duration: '3 seasons',
+    rating: 'FAM',
+    genre: 'Animation',
+    Image: 'images/tv-shows/avatar-last-bender.jpeg',
+    type: '3',
+    code: 'ooVvH2IYz0w?si=8WSAeJ8oUcZgUo-k',
+    summary: `Four elemental nations are at war with each other and only the Avatar, master of all four elements, can restore peace. The new Avatar comes in the form of Aang who strives to fulfil his destiny.`,
+    year: '2005-2008',
+    sort: [
+      'animation',
+      'action',
+      '9',
+
+    ],
+    director: 'Michael Dante DiMartino, Bryan Konietzko, Aaron Ehasz'
+  },
+  {
+    id: '1k',
+    name: 'Stranger Things',
+    duration: '5 Seasons',
+    rating: 'PG',
+    genre: 'Action',
+    Image: 'images/stranger things.jpeg',
+    type: '3',
+    code: 'b9EkMc79ZSU?si=ISMP7UYkNBmyfIiK',
+    summary: `Stranger Things is a supernatural action-drama TV series about a group of friends in the fictional 1980s town of Hawkins, Indiana who encounter supernatural forces and government secrets.`,
+    year: ' Since 2018',
+    director: 'Duffer Brothers',
+    sort: [
+      'horror',
+      'thrl',
+      'sci-fi',
+      '8',
+      '10s'
+    ],
+
+  },
+  
+  {
+    id: '4o',
+    name: 'Bojack Horseman',
+    duration: '6 Seasons',
+    rating: '13',
+    genre: 'Comedy',
+    Image: 'images/bojack.jpeg',
+    type: '3',
+    code: 'i1eJMig5Ik4?si=ZaxNmVFFGi4moz4F',
+    summary: `Meet the most beloved sitcom horse of the '90s ... 20 years later. Set in an L.A. where humans and anthropomorphic animal-people coexist, "BoJack Horseman" is about one man (well, horse-man) who peaked too early and must figure out what to do next. Starring Will Arnett, Amy Sedaris, Alison Brie, and Aaron Paul. BoJack Horseman, a Netflix original series, now streaming.`,
+    year: '2014',
+    sort: [
+      'drm',
+      'cmdy',
+      'animation',
+      '9'
+    ],
+    director: 'Francis Ford Coppola'
+  },
+  {
+    id: '4p',
+    name: 'SpongeBob SquarePants',
+    duration: '15 Seasons',
+    rating: 'FAM',
+    genre: 'Comedy',
+    Image: 'images/spongebob.jpeg',
+    type: '3',
+    code: '47ceXAEr2Oo?si=P86gITWIKlT323fk',
+    summary: `A yellow sea sponge named SpongeBob SquarePants, who enjoys being a cook at Krusty Krab, lives in the Pacific Ocean. He embarks on various adventures with his friends at Bikini Bottom.`,
+    year: '2008',
+    sort: [
+      'cmdy',
+      'animation',
+      'family',
+      '8'
+    ],
+    director: 'Stephen Hillenburg, Paul Tibbitt·'
+  },
+  
   
 
 ]
