@@ -1,78 +1,278 @@
 import { movies } from "./movies.js";
-const url = new URL(window.location.href);
-const sortedId = url.searchParams.get('sort_by')
-export function sortMovies() {
-  let newMovie = []
-  movies.forEach((movie) => {
-    if (sortedId) {
-      if (movie.sort === sortedId) {
-        newMovie.unshift(movie)
-      }
-    }
-    else if (!sortedId) {
-      newMovie = movies
-    }
 
-  });
-  return newMovie
-};
+
 
 const sorts = [
   {
     name: 'popularity',
-    id:''
+    id: 'popular'
   },
   {
     name: 'Trending',
-    id: '?sort_by=Trending'
+    id: 'Trending'
 
   },
   {
     name: 'Alphabetical',
-    id: '?sort_by=alphabet'
+    id: 'alphabet'
 
   },
   {
     name: 'Release Year',
-    id: '?sort_by=release'
+    id: 'release'
 
   },
   {
     name: 'IMDB score',
-    id: '?sort_by=imdb'
+    id: 'imdb'
 
   },
   {
     name: 'Rotten Tomatoes score',
-    id: '?sort_by=Rotten'
+    id: 'Rotten'
 
   },
   {
     name: 'TMDB Popularity',
-    id:  '?sort_by=tmdb'
+    id: 'tmdb'
 
   },
 
   {
     name: 'Random',
-    id:  '?sort_by=Random'
+    id: 'Random'
 
   }
 ]
 let optionSummary = ''
-sorts.forEach((option) => { 
-  optionSummary+=
-  `
-  <a href="popular.html${option.id}"class
+sorts.forEach((option) => {
+  optionSummary +=
+    `
+  <a id="${option.id}"class
   ="sort-options" data-sort-id="${option.id}"><li>${option.name}</li></a>`
-  document.querySelector('.js-dropdown-menu').innerHTML=optionSummary
- 
+  document.querySelector('.js-dropdown-menu').innerHTML = optionSummary
+
 });
 
-const sortSummary=document.querySelector('.js-sorted-by')
-if(sortSummary){
-sortSummary.innerHTML=`sorted by ${sortedId}`
-if(sortedId===null){
-  sortSummary.innerHTML=`sorted by popularity`
+const sortSummary = document.querySelector('.js-sorted-by')
+
+
+
+
+
+function updateURl(param, value) {
+  const url = new URL(window.location);
+  url.searchParams.set(param, value);
+  // Update the URL and reload the page
+  window.location.href = url.toString();
+  // history.pushState({}, '', url)
 }
+function getQueryParam(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
 }
+function updateGenres(newGenre) {
+  const url = new URL(window.location);
+  let genres = getQueryParam('genres'); 3
+  // If genres exist, append the new genre, otherwise set it
+  if (genres) {
+    let genresArray = genres.split(',');
+    if (!genresArray.includes(newGenre)) {
+      genresArray.push(newGenre);
+    }
+    url.searchParams.set('genres', genresArray.join(','));
+  } else {
+    url.searchParams.set('genres', newGenre);
+  }
+  // Update the URL without reloading the page
+  window.history.pushState({ genres }, '', url);
+}
+window.addEventListener('popstate', (event) => {
+  const url = new URL(window.location);
+  if (event.state) {
+    // Force reload the page with the new state in URL
+    window.location.href = url.href;
+  }
+});
+let newMovie = []
+export function sortMovies() {
+  let genres = getQueryParam('genres')
+  if (genres) {
+    genres = genres.split(',')
+  }
+  console.log(genres)
+  const sortBy = getQueryParam('sort_by');
+  const rating = getQueryParam('rating');
+  const releaseYear = getQueryParam('year');
+  const search = getQueryParam('search');
+
+  newMovie = movies
+
+  if (genres) {
+    newMovie = movies.filter((movie) => {
+      // Check if movie.sort exists and is an array
+      if (Array.isArray(movie.sort)) {
+        // Check if there's any overlap between genres and movie.sort
+        return genres.some((genre) => movie.sort.includes(genre));
+      }
+      return false;
+    });
+  }
+
+  if (sortBy) {
+    newMovie = newMovie.filter((movie) => {
+      if (Array.isArray(movie.sort)) {
+        // Check if there's any overlap between genres and movie.sort
+        return movie.sort.includes(sortBy);
+      };
+    });
+  };
+  if (rating) {
+    newMovie = newMovie.filter((movie) => {
+      if (Array.isArray(movie.sort)) {
+        // Check if there's any overlap between genres and movie.sort
+
+        return movie.sort.includes(rating);
+      };
+    });
+  };
+  if (releaseYear) {
+    newMovie = findAllCloseValues(releaseYear, 10)
+  }
+  if (search) {
+    newMovie = newMovie.filter(movie => {
+      return movie.name.toLowerCase().includes(search.toLowerCase())||movie.sort.includes(search.toLowerCase())
+      
+    });
+   
+  }
+  if (sortSummary) {
+    sortSummary.innerHTML = `sorted by ${sortBy}`
+    if (sortBy === null) {
+      sortSummary.innerHTML = `sorted by popularity`
+    }
+  };
+  return newMovie
+};
+
+
+// genres DOM selector object
+{
+  document.getElementById('animation').addEventListener('click', () => {
+    updateGenres('animation')
+  });
+  document.getElementById('anime').addEventListener('click', () => {
+    updateGenres('anime')
+  });
+  document.getElementById('action').addEventListener('click', () => {
+    updateGenres('action')
+  })
+  document.getElementById('thrl').addEventListener('click', () => {
+    updateGenres('thrl')
+  });
+  document.getElementById('adv').addEventListener('click', () => {
+    updateGenres('adv')
+  });
+  document.getElementById('cmdy').addEventListener('click', () => {
+    updateGenres('cmdy')
+  });
+  document.getElementById('rmnce').addEventListener('click', () => {
+    updateGenres('rmnce');
+  });
+  document.getElementById('crm').addEventListener('click', () => {
+    updateGenres('crm')
+  });
+  document.getElementById('drm').addEventListener('click', () => {
+    updateGenres('drm')
+  })
+}
+//sort_by DOM selector object
+{
+  document.getElementById('popular').addEventListener('click', () => {
+
+    const url = new URL(window.location);
+    // Remove the specific query parameter
+    url.searchParams.delete('sort_by');
+    window.history.pushState({}, '', url);
+    window.location.href = ''
+
+  })
+  document.getElementById('Trending').addEventListener('click', () => {
+    updateURl('sort_by', 'Trending')
+  });
+  document.getElementById('alphabet').addEventListener('click', () => {
+    updateURl('sort_by', 'alphabet')
+  });
+
+  document.getElementById('alphabet').addEventListener('click', () => {
+    updateURl('sort_by', 'alphabet')
+  });
+
+  document.getElementById('imdb').addEventListener('click', () => {
+    updateURl('sort_by', 'imdb')
+  });
+  document.getElementById('release').addEventListener('click', () => {
+    updateURl('sort_by', 'year')
+  });
+  document.getElementById('Random').addEventListener('click', () => {
+    updateURl('sort_by', 'Random')
+  });
+}
+
+// DOM selection by rating
+{
+  const slider = document.getElementById('slider')
+  const valueDisplay = document.getElementById('display')
+  valueDisplay.textContent = slider.value
+  slider.addEventListener('input', () => {
+    valueDisplay.textContent = slider.value
+  });
+  slider.addEventListener('mouseup', () => {
+    updateURl('rating', slider.value)
+  })
+}
+
+
+{
+  const slider1 = document.getElementById('slider1')
+  const valueDisplay = document.getElementById('year-display')
+  valueDisplay.textContent = slider1.value
+  slider1.addEventListener('input', () => {
+    valueDisplay.textContent = slider1.value
+  });
+  slider1.addEventListener('mouseup', () => {
+    updateURl('year', slider1.value)
+  })
+}
+
+function findAllCloseValues(target, threshold) {
+  let yearArray = []
+
+  return newMovie.filter(movie => {
+    let finalYear;
+    console.log(finalYear)
+    yearArray.push(movie.year);
+    const years = getFirstNumbers(yearArray)
+    years.filter((year) => {
+
+      if (Math.abs(target - year).toString() <= threshold) {
+        finalYear = year
+      }
+
+    });
+    return movie.year.includes(finalYear)
+  }
+  );
+
+}
+
+
+function getFirstNumbers(arr) {
+  return arr.map(str => {
+    const match = str.match(/\d+/);
+    console.log(match[0])
+    return match ? match[0] : null;
+  });
+};
+
+

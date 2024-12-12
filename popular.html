@@ -14,7 +14,9 @@
   <header>
     <nav>
       <ul>
-        <li class="logo"><div class="box"></div>Raven</li>
+        <li class="logo">
+          <div class="box"></div>Raven
+        </li>
         <li id="home" class="nav-btn">
           <a href="home.html">Home</a>
         </li>
@@ -24,7 +26,7 @@
         </li>
 
         <li id="Popular" class="nav-btn">
-          <a href="popular.html">
+          <a href="">
             Popular
           </a>
         </li>
@@ -36,10 +38,10 @@
         </li>
         <li id="contact" class="nav-btn">
           <a class="myLink" href="">
-            Contact 
+            Contact
           </a>
         </li>
-        <li id="contact" class="nav-btn">
+        <li id="" class="nav-btn">
           <a class="myLink" href="watchlist.html">
             Watchlist
           </a>
@@ -48,9 +50,9 @@
       <div class="right-section">
         <ul>
           <li class="type-selection">
-            <span>
-              <svg  id="menu5-btn" aria-hidden="true" class="js-search-btn search-btn " fill="currentColor"
-                height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+            <span class="js-search-btn">
+              <svg id="menu5-btn" aria-hidden="true" class="js-search-btn search-btn " fill="currentColor" height="48"
+                viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M45.5 43.3788L34.1718 32.0507C36.8939 28.7827 38.2513 24.5911 37.9616 20.3479C37.672 16.1046 35.7575 12.1364 32.6166 9.26865C29.4757 6.40093 25.35 4.85455 21.098 4.95117C16.846 5.04779 12.7948 6.77999 9.78742 9.78742C6.77999 12.7948 5.04779 16.846 4.95117 21.098C4.85455 25.35 6.40093 29.4757 9.26865 32.6166C12.1364 35.7575 16.1046 37.672 20.3479 37.9616C24.5911 38.2513 28.7827 36.8939 32.0507 34.1718L43.3788 45.5L45.5 43.3788ZM7.99999 21.5C7.99999 18.8299 8.79175 16.2199 10.2751 13.9998C11.7585 11.7797 13.867 10.0494 16.3338 9.02762C18.8006 8.00583 21.515 7.73849 24.1337 8.25939C26.7525 8.78029 29.1579 10.066 31.0459 11.954C32.9339 13.8421 34.2197 16.2475 34.7406 18.8663C35.2615 21.485 34.9941 24.1994 33.9724 26.6662C32.9506 29.133 31.2202 31.2414 29.0002 32.7248C26.7801 34.2082 24.17 35 21.5 35C17.9208 34.996 14.4893 33.5724 11.9584 31.0415C9.42755 28.5107 8.00396 25.0792 7.99999 21.5Z"
                   fill="currentColor"></path>
@@ -88,14 +90,17 @@
               </path>
             </svg>
             <div class="drop-down" id="menu1-content">
-              <ul class="dropdown-menu js-dropdown">
-                <li class="Decade-title"> Choose based on Decade</li>
-                <li><a href="#option1">1980s</a></li>
-                <li><a href="#option2">1990s</a></li>
-                <li><a href="#option3">2000s</a></li>
-                <li><a href="#option3">2010s</a></li>
-                <li><a href="#option3">2020s</a></li>
-              </ul>
+              <div class=" rating-selector">
+              <span>Year: <span id="year-display"></span></span> 
+                <div class="slider-container">
+                 
+                  <span id="min">1900</span>
+                  <input type="range" id="slider1" min="1900" max="2024" value="1" />
+                  <span id="max">2024</span>
+                  
+                </div>
+
+              </div>
             </div>
 
           </span>
@@ -110,15 +115,23 @@
             <div class="drop-down genre-drop-down" id="menu3-content">
               <ul class="dropdown-menu js-dropdown">
                 <li class="Decade-title"> Select based on Genre</li>
-                <li><a href="#option1">Animation</a></li>
-                <li><a href="#option2">Anime</a></li>
-                <li><a href="#option3">Action</a></li>
-                <li><a href="#option3">Thriller</a></li>
-                <li><a href="#option3">Adventure</a></li>
-                <li><a href="#option3">Drama</a></li>
-                <li><a href="#option3">Comedy</a></li>
-                <li><a href="#option3">Romance</a></li>
-                <li><a href="#option3">Crime</a></li>
+                <li id="animation">
+                  <a href="">Animation</a>
+                </li>
+                <li id="anime">
+                  <a href="">Anime</a>
+                </li>
+                <li id="action">
+                  <a href="">Action</a>
+                </li>
+                <li id="thrl">
+                  <a href="">Thriller</a>
+                </li>
+                <li id="adv"><a href="">Adventure</a></li>
+                <li id="drm"><a href="">Drama</a></li>
+                <li id="cmdy"><a href="">Comedy</a></li>
+                <li id="rmnce"><a href="">Romance</a></li>
+                <li id="crm"><a href="">Crime</a></li>
 
               </ul>
             </div>
@@ -132,24 +145,25 @@
               </path>
             </svg>
             <div class="drop-down genre-drop-down" id="menu4-content">
-              <ul class="dropdown-menu js-dropdown">
-                <li class="Decade-title"> Select based on IMDB Rating</li>
-                <li><a href="#option1">poor</a></li>
-                <li><a href="#option2">Medium</a></li>
-                <li><a href="#option3">Good</a></li>
-                <li><a href="#option3">Highly Rated</a></li>
+              <div class=" rating-selector">
+                <div class="slider-container">
+                  <span id="min">0</span>
+                  <input type="range" id="slider" min="1" max="10" value="1" />
+                  <span id="max">10</span>
+                  <span id="display">5</span>
+                </div>
 
-              </ul>
+              </div>
             </div>
           </span>
-          <span class="reset-btn js-reset-btn"> <a href="">X RESET</a></span>
+          <span class="reset-btn js-reset-btn"> <a href="popular.html">X RESET</a></span>
         </div>
         <div class="title-list-options js-title-list-options">
           <div class="flex-row">
             <span class="movies-count">30 titles</span>
             <span class="js-type-selection type-selection flex-align" id="menu2-btn">
               <div class='js-sorted-by'>sorted by popularity</div>
-            
+
               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img"
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-chevron-down ">
                 <path fill="currentColor"
@@ -158,9 +172,9 @@
                 </path>
               </svg>
               <div class="drop-down" id="menu2-content">
-               
+
                 <ul class="dropdown-menu js-dropdown-menu">
-           
+
                 </ul>
               </div>
 
@@ -174,10 +188,10 @@
       </div>
     </section>
   </main>
-  
+
   <script type="module" src="scripts/popular.js"></script>
   <script type="module" src="scripts/sortedby.js"></script>
-  
+
 </body>
 
 </html>

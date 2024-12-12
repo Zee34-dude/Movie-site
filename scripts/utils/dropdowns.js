@@ -19,7 +19,7 @@ export function runDropDownBtn() {
     menu1Content.classList.remove('active');
     menu2Content.classList.remove('active');
     menu3Content.classList.remove('active');
-    menu4Content.classList.remove('active');
+    // menu4Content.classList.remove('active');
    
     overlay.classList.remove('active')
 
@@ -33,11 +33,11 @@ export function runDropDownBtn() {
       menuContent.classList.add('active');
       
     }
-    else if (isActive) {
-      menuContent.classList.remove('active');
-      overlay.classList.remove('active')
+    // else if (isActive) {
+    //   menuContent.classList.remove('active');
+    //   overlay.classList.remove('active')
 
-    }
+    // }
 
   }
 
@@ -72,15 +72,37 @@ export function runDropDownBtn() {
   });
   // Close dropdowns when clicking anywhere on the document
   document.addEventListener('click', () => {
+   
+  });
+  document.addEventListener('click',(event)=>{
     menu1Content.classList.remove('active');
     menu2Content.classList.remove('active');
     menu3Content.classList.remove('active');
-    menu4Content.classList.remove('active')
     overlay.classList.remove('active')
+   
+    if(!menu4Btn.contains(event.target)&&!menu4Content.contains(event.target)){
+      menu4Content.classList.remove('active')
+    }  
+  })
+}
+export function runMenu5Btn() {
+  const menu5Btn = document.getElementById('menu5-btn');
+  const menu5Content = document.getElementById('menu5-content');
+  menu5Btn.addEventListener('click', () => {
+    menu5Content.classList.toggle('active');
   });
-  document.addEventListener('click',(event)=>{
-    if(!menu5Btn.contains(event.target)&&!menu5Content.contains(event.target)){
+  document.addEventListener('click', (event) => {
+    if (!menu5Btn.contains(event.target) && !menu5Content.contains(event.target)) {
       menu5Content.classList.remove('active')
     }
+  })
+};
+export function search() {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      const search = document.querySelector('.search-input').value
+      window.location.href = `popular.html?search=${search}`
+    }
+
   })
 }

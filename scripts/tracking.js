@@ -1,14 +1,22 @@
 
 import { getMovie } from "./movies.js";
-import { runMenu5Btn } from "./movies.js";
+import { runMenu5Btn,search} from './utils/dropdowns.js'
 import { addToWatchlist, watchlist, removeFromWatchlist } from "./watchlist.js";
 const url = new URL(window.location.href);
 const movieId = url.searchParams.get('movieId')
 const movie = getMovie(movieId);
-
+runMenu5Btn()
 function renderMoviePage(){
 let movieSummary = ''
+let creator;
+if(movie.type==='2'){
+  creator='Directed'
+}
+else{
+  creator='Created'
+}
 movieSummary = `
+
 
 <div class="mv-summary-container ">
         <div class="image-container">
@@ -19,7 +27,7 @@ movieSummary = `
         </div>
         <div class="mv-summary">
           <h1 class="mv-title">${movie.name}</h1>
-          <div class="grey  director ">Directed by ${movie.director}</div>
+          <div class="grey  director ">${creator} by ${movie.director}</div>
           <div class="grey flex-row margin-top">
             <span class="mv-year">${movie.year}</span>
             <span>${movie.duration}</span>
@@ -130,6 +138,6 @@ watchBtn.addEventListener('click', () => {
 });
 };
 renderMoviePage()
-
+search()
 
 

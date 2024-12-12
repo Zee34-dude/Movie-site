@@ -1,20 +1,35 @@
+.scroll-bar {
+  position: relative;
+  scrollbar-width: none;
+  overflow: scroll hidden;
+}
+
 .watchlist-grid {
-  padding: 200px 150px 0;
+  display: flex;
+  padding: 200px 90px 0;
+  gap: 40px;
+
+
 }
 
 .movie-container {
   display: flex;
+  flex-direction: column;
   gap: 30px;
   margin-top: 30px;
+  width: 200px;
 }
-.image-container{
-  width:200px ;
+
+.image-container {
+  width: 200px;
   height: 251px;
 }
-img{
+
+img {
   width: 100%;
-  height:100% ;
+  height: 100%;
 }
+
 .grey {
   color: #727F92
 }
@@ -30,7 +45,12 @@ img{
 }
 
 .mv-title {
+  font-size: 18px;
   color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: nowrap;
 
 }
 
@@ -51,8 +71,9 @@ svg {
   margin-top: 5px;
   position: relative;
 }
-.watchlist-div{
-  margin-top: 100px;
+
+.watchlist-div {
+ position: relative; 
 }
 
 .watchlist-tooltip {
@@ -61,13 +82,14 @@ svg {
   padding: 10px 10px;
   white-space: nowrap;
   border-radius: 4px;
-  top: -55px;
-  left: -50px;
+  top: -51px;
+  left: -34%;
   opacity: 0;
   transition: 0.3s ease-in-out;
   font-size: 0.85rem;
   pointer-events: none;
-  
+  color: white;
+
 }
 
 .watchlist-tooltip::before {
