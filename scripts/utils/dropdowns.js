@@ -110,3 +110,7 @@ export function search() {
 
   })
 }
+export function renderWatchlist() {
+  const watchlist = JSON.parse(localStorage.getItem("watchlist"));
+  document.querySelector('.watchlist-count').innerHTML = `${watchlist.length}`
+}

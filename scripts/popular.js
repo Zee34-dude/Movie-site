@@ -1,5 +1,5 @@
 import { renderFilterSummary } from './filter.js'
-import { runDropDownBtn, runMenu5Btn, search } from './utils/dropdowns.js'
+import { runDropDownBtn, runMenu5Btn, search,renderWatchlist } from './utils/dropdowns.js'
 import { sortMovies } from './sortedby.js'
 import { addToWatchlist, removeFromWatchlist, watchlist } from './watchlist.js'
 
@@ -61,13 +61,17 @@ function renderMovieSummary(productId) {
 
       if (watchlist?.map(el => el.movieId)?.includes(movieId)) {
         removeFromWatchlist(movieId)
+        renderWatchlist()
         document.querySelector(`.js-watch-btn${movieId}`).classList.remove('active')
+
+        
       }
       else {
         addToWatchlist(movieId)
+        renderWatchlist()
         document.querySelector(`.js-watch-btn${movieId}`).classList.add('active')
+      
       }
-
 
     });
 
@@ -83,6 +87,7 @@ function renderMovieSummary(productId) {
 
 
 };
+
 const filterSelectors = document.querySelectorAll('.filter-option');
 filterSelectors.forEach((selector) => {
   selector.addEventListener('click', () => {
@@ -100,6 +105,7 @@ resetBtn.addEventListener('click', () => {
 search();
 
 
+renderWatchlist()
 
 
 

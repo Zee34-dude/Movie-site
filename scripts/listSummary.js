@@ -1,14 +1,15 @@
 
 import { getMovie} from "./movies.js"
-import { removeFromWatchlist } from "./watchlist.js";
+import { removeFromWatchlist} from "./watchlist.js";
 import {search,runMenu5Btn} from "./utils/dropdowns.js";
+ 
 
 function renderWatchlistSummary() {
-  let watchlistSummary = '';
   const watchlist = JSON.parse(localStorage.getItem("watchlist"));
+  console.log(watchlist)
+  let watchlistSummary = '';
+  
   watchlist.forEach((movie, index) => {
-
-    console.log(index)
     const movieId = movie.movieId
     const matchingMovie = getMovie(movieId)
     watchlistSummary += ` 
@@ -69,7 +70,6 @@ function renderWatchlistSummary() {
       renderWatchlistSummary();
     });
   });
-
 
 };
 renderWatchlistSummary()
