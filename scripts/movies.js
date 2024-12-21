@@ -1584,6 +1584,7 @@ export const movies = [
       'Trending',
       'musical',
       'fantasty',
+      'thrl'
 
     ],
     director: 'Jon M. Chu'

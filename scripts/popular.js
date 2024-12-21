@@ -1,5 +1,5 @@
 import { renderFilterSummary } from './filter.js'
-import { runDropDownBtn,runMenu5Btn,search} from './utils/dropdowns.js'
+import { runDropDownBtn, runMenu5Btn, search } from './utils/dropdowns.js'
 import { sortMovies } from './sortedby.js'
 import { addToWatchlist, removeFromWatchlist, watchlist } from './watchlist.js'
 
@@ -35,7 +35,7 @@ function renderMovieSummary(productId) {
      </span>
       </div>
       
-            <div class="mv-description">
+       <div class="mv-description">
         <span class="left-span">
           <div class="duration">
             ${movie.duration} ,<p>${movie.genre}</p>
@@ -72,6 +72,8 @@ function renderMovieSummary(productId) {
     });
 
   });
+  
+
   // addBtn.forEach(btn => {
   //   if (localStorage.getItem(`isActive-${btn.dataset.movieId}`) === 'true') {
   //     btn.classList.add('active');
@@ -94,7 +96,9 @@ resetBtn.addEventListener('click', () => {
   window.location.href = `home.html`
 
 });
-search()
+
+search();
+
 
 
 

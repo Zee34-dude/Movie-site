@@ -20,18 +20,18 @@ export function runDropDownBtn() {
     menu2Content.classList.remove('active');
     menu3Content.classList.remove('active');
     // menu4Content.classList.remove('active');
-   
+
     overlay.classList.remove('active')
 
     // Open the selected dropdown
 
-    if (!isActive &&!(menuContent===menu5Content)) {
+    if (!isActive && !(menuContent === menu5Content)) {
       menuContent.classList.add('active');
       overlay.classList.add('active');
     }
-    else if(!isActive){
+    else if (!isActive) {
       menuContent.classList.add('active');
-      
+
     }
     // else if (isActive) {
     //   menuContent.classList.remove('active');
@@ -72,17 +72,17 @@ export function runDropDownBtn() {
   });
   // Close dropdowns when clicking anywhere on the document
   document.addEventListener('click', () => {
-   
+
   });
-  document.addEventListener('click',(event)=>{
+  document.addEventListener('click', (event) => {
     menu1Content.classList.remove('active');
     menu2Content.classList.remove('active');
     menu3Content.classList.remove('active');
     overlay.classList.remove('active')
-   
-    if(!menu4Btn.contains(event.target)&&!menu4Content.contains(event.target)){
+
+    if (!menu4Btn.contains(event.target) && !menu4Content.contains(event.target)) {
       menu4Content.classList.remove('active')
-    }  
+    }
   })
 }
 export function runMenu5Btn() {
@@ -95,7 +95,11 @@ export function runMenu5Btn() {
     if (!menu5Btn.contains(event.target) && !menu5Content.contains(event.target)) {
       menu5Content.classList.remove('active')
     }
-  })
+  });
+
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.nav-bar').classList.toggle('active')
+  });
 };
 export function search() {
   document.addEventListener('keydown', (event) => {

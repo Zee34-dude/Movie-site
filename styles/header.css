@@ -4,6 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'),url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +20,9 @@
 }
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: 'Overpass', sans-serif;
-  box-sizing: border-box;
-  overflow-x: hidden;
   background-color: #212529;
+  overflow-x: hidden;
 }
 
 header {
@@ -26,11 +31,34 @@ header {
   top: 30px;
   left: 0;
   right: 0;
+
+}
+.fixed-header {
+  position: fixed; /* Fixed position */
+  top: 0; /* Stick to the top */
+  width: 100%; /* Full width */
+  height: 70px;
+  background-color:rgba(0, 0, 0, 0.795); /* Optional: background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: dropDown 0.5s ease-in-out;
+} 
+
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.hamburger {
+  display: none;
 }
 
 nav {
   display: flex;
- align-items: center;
+  align-items: center;
 }
 
 nav ul {
@@ -42,43 +70,48 @@ nav ul {
 }
 
 .logo {
-  margin-right: 100px;
   font-family: "Averia Serif Libre", serif;
-  color:white;
+  color: white;
   font-weight: 700;
   font-size: 2rem;
   position: relative;
+  padding: 10px 20px;
+  margin-left: 100px;
 }
- .box{
+
+.box {
   position: absolute;
   background-color: #e50914;
   width: 30px;
   height: 30px;
   top: 13px;
   left: -15px;
-  
+
   border-radius: 4px;
 
- }
- .box::before{
+}
+
+.box::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color:rgba(34, 34, 34, 0.856);
+  background-color: rgba(34, 34, 34, 0.856);
   transform: translateY(-50%);
- }
- .box::after{
+}
+
+.box::after {
   content: "";
   position: absolute;
   top: 15px;
   width: 100%;
   height: 2px;
-  background-color:rgba(34, 34, 34, 0.856);
+  background-color: rgba(34, 34, 34, 0.856);
   transform: rotate(90deg);
- }
+}
+
 nav ul li {
   list-style: none;
   padding: 10px 20px;
@@ -95,6 +128,9 @@ nav ul a {
 
 }
 
+.right-section {
+  padding-left: 100px;
+}
 
 .right-section li a {
   text-decoration: none;
@@ -102,11 +138,13 @@ nav ul a {
   ;
 
 }
+
 .type-selection {
   position: relative;
   /* z-index: 1000; */
 }
-.type-selection svg{
+
+.type-selection svg {
   height: 1em;
 }
 
@@ -122,7 +160,7 @@ nav ul a {
 }
 
 .genre-drop-down {
-  left: 40px;
+  left: -40px;
 }
 
 .drop-down.active {
@@ -168,7 +206,7 @@ nav ul a {
   transition: 0.1s ease-in-out;
 }
 
-.dropdown-menu  a {
+.dropdown-menu a {
   text-decoration: none;
   color: #d8d5d5;
   font-size: 1.1rem;
@@ -180,9 +218,11 @@ nav ul a {
   left: -40px;
   top: 50px;
   width: 25vw;
-
 }
 
+.fa-user:before{
+  content: "\f007";
+}
 .search-input {
   width: 100%;
   padding: 20px 10px;
@@ -199,3 +239,139 @@ nav ul a {
   background-color: #212529;
 
 }
+
+@media only screen and (max-width:1200px) {
+  header {
+    z-index: 2;
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    right: 10px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .nav-bar.active {
+    top: 60px;
+
+  }
+
+  .nav-bar {
+    z-index: 10;
+    position: absolute;
+    top: -10000px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.548);
+    background-color: #2b3035;
+    align-items: flex-start;
+    transition: 0.1s ease-in;
+  }
+
+  .logo {
+    margin-left: 30px;
+    font-family: "Averia Serif Libre", serif;
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    position: relative;
+  }
+
+  .input-dropdown {
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    width: 25vw;
+  }
+
+
+  .drop-down {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .hamburger svg {
+    height: 50px;
+    color: white;
+  }
+
+  .box {
+    position: absolute;
+    background-color: #e50914;
+    width: 30px;
+    height: 30px;
+    top: 13px;
+    left: -15px;
+    border-radius: 4px;
+
+  }
+
+  .box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(34, 34, 34, 0.856);
+    transform: translateY(-50%);
+  }
+
+  .box::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(34, 34, 34, 0.856);
+    transform: rotate(90deg);
+  }
+
+  nav ul li {
+    list-style: none;
+    padding: 10px 20px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.125em;
+
+  }
+
+  nav ul a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Overpass', sans-serif;
+  }
+
+  .right-section {
+    padding-left: 0;
+  }
+
+  .right-section li a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .genre-drop-down {
+    left: -70px;
+  }
+};
+

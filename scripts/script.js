@@ -83,3 +83,24 @@ function renderMovieSummary() {
 };
 renderMovieSummary()
 search()
+
+
+const header = document.querySelector('header');
+const scrollPosition = 200; // Adjust this value to your desired scroll position
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= scrollPosition) {
+    header.classList.add('fixed-header');
+    
+  } else {
+    header.classList.remove('fixed-header');
+  }
+});
+//factorials
+/*let n=5
+let result=1
+while(n >1){
+result*=n
+n--
+console.log(result)
+}*/

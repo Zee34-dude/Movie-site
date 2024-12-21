@@ -113,6 +113,7 @@ export function sortMovies() {
       // Check if movie.sort exists and is an array
       if (Array.isArray(movie.sort)) {
         // Check if there's any overlap between genres and movie.sort
+
         return genres.some((genre) => movie.sort.includes(genre));
       }
       return false;
@@ -224,21 +225,41 @@ export function sortMovies() {
   const slider = document.getElementById('slider')
   const valueDisplay = document.getElementById('display')
   valueDisplay.textContent = slider.value
+  window.addEventListener('load',()=>{
+    const savedValue=JSON.parse(localStorage.getItem('Value'));
+
+    if(savedValue!==null){
+      slider.value=savedValue;
+      valueDisplay.textContent=savedValue
+    }
+  });
   slider.addEventListener('input', () => {
-    valueDisplay.textContent = slider.value
+    const currentValue=slider.value
+    valueDisplay.textContent = currentValue
+    localStorage.setItem ('Value',JSON.stringify(currentValue));
   });
   slider.addEventListener('mouseup', () => {
     updateURl('rating', slider.value)
+
   })
 }
 
 
 {
   const slider1 = document.getElementById('slider1')
-  const valueDisplay = document.getElementById('year-display')
-  valueDisplay.textContent = slider1.value
+  const valueDisplay = document.getElementById('year-display');
+  window.addEventListener('load',()=>{
+    const savedValue=JSON.parse(localStorage.getItem('sliderValue'));
+    console.log(savedValue)
+    if(savedValue!==null){
+      slider1.value=savedValue;
+      valueDisplay.textContent=savedValue
+    }
+  })
   slider1.addEventListener('input', () => {
-    valueDisplay.textContent = slider1.value
+    const currentValue=slider1.value
+    valueDisplay.textContent = currentValue
+    localStorage.setItem ('sliderValue',JSON.stringify(currentValue));
   });
   slider1.addEventListener('mouseup', () => {
     updateURl('year', slider1.value)
@@ -270,6 +291,7 @@ function findAllCloseValues(target, threshold) {
 function getFirstNumbers(arr) {
   return arr.map(str => {
     const match = str.match(/\d+/);
+
     console.log(match[0])
     return match ? match[0] : null;
   });
