@@ -1,7 +1,7 @@
 
 import { getMovie} from "./movies.js"
 import { removeFromWatchlist} from "./watchlist.js";
-import {search,runMenu5Btn} from "./utils/dropdowns.js";
+import {search,runMenu5Btn,renderWatchlist} from "./utils/dropdowns.js";
  
 
 function renderWatchlistSummary() {
@@ -67,6 +67,7 @@ function renderWatchlistSummary() {
     btn.addEventListener('click', () => {
       const { movieId } = btn.dataset
       removeFromWatchlist(movieId);
+      renderWatchlist()
       renderWatchlistSummary();
     });
   });
@@ -74,3 +75,4 @@ function renderWatchlistSummary() {
 };
 renderWatchlistSummary()
 search()
+renderWatchlist()
