@@ -35,7 +35,7 @@ export function renderHeaderSummary() {
             <a id="watchlist" class="myLink" href="watchlist.html">
               Watchlist
             </a>
-            <div class="watchlist-count">${watchlist.length}</div>
+            <div class="watchlist-count">1</div>
           </li>
 
         </ul>
