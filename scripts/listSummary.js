@@ -1,9 +1,10 @@
 
 import { getMovie} from "./movies.js"
 import { removeFromWatchlist} from "./watchlist.js";
-import {search,runMenu5Btn,renderWatchlist} from "./utils/dropdowns.js";
+import {search,runMenu5Btn,renderWatchlist,showHeader} from "./utils/dropdowns.js";
+import { renderHeaderSummary } from "./utils/header.js";
  
-
+document.querySelector('header').innerHTML=renderHeaderSummary()
 function renderWatchlistSummary() {
   const watchlist = JSON.parse(localStorage.getItem("watchlist"));
   console.log(watchlist)
@@ -56,6 +57,7 @@ function renderWatchlistSummary() {
 
 
   });
+  
   runMenu5Btn()
   const watchSummary = document.querySelector('.js-watchlist-grid')
 
@@ -73,6 +75,7 @@ function renderWatchlistSummary() {
   });
 
 };
+showHeader()
 renderWatchlistSummary()
 search()
 renderWatchlist()

@@ -1,15 +1,16 @@
 import { movies } from "./movies.js";
 import { search } from "./utils/dropdowns.js";
+import { runMenu5Btn, showHeader } from "./utils/dropdowns.js";
+import { renderHeaderSummary } from "./utils/header.js";
 const divs = document.getElementById('div-container')
 const slides = document.querySelectorAll('.slide-1');
 const leftBtn = document.querySelector('.left-btn');
 const rightBtn = document.querySelector('.right-btn');
-import { runMenu5Btn } from "./utils/dropdowns.js";
-
+document.querySelector('.header').innerHTML=renderHeaderSummary()
 renderPage()
 function renderPage() {
   let idx = 0
-  let interval=setInterval(run,5000)
+  let interval = setInterval(run, 5000)
   function run() {
     idx++
     changeSlide()
@@ -84,18 +85,31 @@ function renderMovieSummary() {
 renderMovieSummary()
 search()
 
+showHeader()
 
-const header = document.querySelector('header');
-const scrollPosition = 200; // Adjust this value to your desired scroll position
+const windowWidth = window.innerWidth
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY >= scrollPosition) {
-    header.classList.add('fixed-header');
-    
-  } else {
-    header.classList.remove('fixed-header');
+const playBtn = document
+
+if (windowWidth < 768) {
+
+  slides.forEach((slide) => {
+    const detailsEl = slide.querySelector('.details')
+    if (detailsEl.offsetHeight < 200) {
+      slide.querySelector('.play-btn').style.marginTop = '100px'
+    }
+  })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = document.body.dataset.page;
+  console.log(currentPage)
+  const activeLink = document.getElementById(currentPage);
+  if (activeLink) {
+      activeLink.classList.add('active');
   }
 });
+
 //factorials
 /*let n=5
 let result=1

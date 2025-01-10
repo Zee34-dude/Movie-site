@@ -1,7 +1,5 @@
 import { movies } from "./movies.js";
 
-
-
 const sorts = [
   {
     name: 'popularity',
@@ -56,10 +54,6 @@ sorts.forEach((option) => {
 
 const sortSummary = document.querySelector('.js-sorted-by')
 
-
-
-
-
 function updateURl(param, value) {
   const url = new URL(window.location);
   url.searchParams.set(param, value);
@@ -73,7 +67,7 @@ function getQueryParam(name) {
 }
 function updateGenres(newGenre) {
   const url = new URL(window.location);
-  let genres = getQueryParam('genres'); 3
+  let genres = getQueryParam('genres');
   // If genres exist, append the new genre, otherwise set it
   if (genres) {
     let genresArray = genres.split(',');
@@ -142,10 +136,10 @@ export function sortMovies() {
   }
   if (search) {
     newMovie = newMovie.filter(movie => {
-      return movie.name.toLowerCase().includes(search.toLowerCase())||movie.sort.includes(search.toLowerCase())
-      
+      return movie.name.toLowerCase().includes(search.toLowerCase()) || movie.sort.includes(search.toLowerCase())
+
     });
-   
+
   }
   if (sortSummary) {
     sortSummary.innerHTML = `sorted by ${sortBy}`
@@ -153,9 +147,10 @@ export function sortMovies() {
       sortSummary.innerHTML = `sorted by popularity`
     }
   };
+ 
   return newMovie
 };
-
+console.log(movies)
 
 // genres DOM selector object
 {
@@ -225,18 +220,18 @@ export function sortMovies() {
   const slider = document.getElementById('slider')
   const valueDisplay = document.getElementById('display')
   valueDisplay.textContent = slider.value
-  window.addEventListener('load',()=>{
-    const savedValue=JSON.parse(localStorage.getItem('Value'));
+  window.addEventListener('load', () => {
+    const savedValue = JSON.parse(localStorage.getItem('Value'));
 
-    if(savedValue!==null){
-      slider.value=savedValue;
-      valueDisplay.textContent=savedValue
+    if (savedValue !== null) {
+      slider.value = savedValue;
+      valueDisplay.textContent = savedValue
     }
   });
   slider.addEventListener('input', () => {
-    const currentValue=slider.value
+    const currentValue = slider.value
     valueDisplay.textContent = currentValue
-    localStorage.setItem ('Value',JSON.stringify(currentValue));
+    localStorage.setItem('Value', JSON.stringify(currentValue));
   });
   slider.addEventListener('mouseup', () => {
     updateURl('rating', slider.value)
@@ -248,18 +243,18 @@ export function sortMovies() {
 {
   const slider1 = document.getElementById('slider1')
   const valueDisplay = document.getElementById('year-display');
-  window.addEventListener('load',()=>{
-    const savedValue=JSON.parse(localStorage.getItem('sliderValue'));
+  window.addEventListener('load', () => {
+    const savedValue = JSON.parse(localStorage.getItem('sliderValue'));
     console.log(savedValue)
-    if(savedValue!==null){
-      slider1.value=savedValue;
-      valueDisplay.textContent=savedValue
+    if (savedValue !== null) {
+      slider1.value = savedValue;
+      valueDisplay.textContent = savedValue
     }
   })
   slider1.addEventListener('input', () => {
-    const currentValue=slider1.value
+    const currentValue = slider1.value
     valueDisplay.textContent = currentValue
-    localStorage.setItem ('sliderValue',JSON.stringify(currentValue));
+    localStorage.setItem('sliderValue', JSON.stringify(currentValue));
   });
   slider1.addEventListener('mouseup', () => {
     updateURl('year', slider1.value)
@@ -290,9 +285,9 @@ function findAllCloseValues(target, threshold) {
 
 function getFirstNumbers(arr) {
   return arr.map(str => {
+    console.log(arr)
     const match = str.match(/\d+/);
-
-    console.log(match[0])
+    console.log(match)
     return match ? match[0] : null;
   });
 };

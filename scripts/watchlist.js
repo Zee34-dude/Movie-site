@@ -50,4 +50,11 @@ export function removeFromWatchlist(movieId) {
   watchlist = newWatchlist
   saveToStorage(newWatchlist);
 }
-
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = document.body.dataset.page;
+  console.log(currentPage)
+  const activeLink = document.getElementById(currentPage);
+  if (activeLink) {
+      activeLink.classList.add('active');
+  }
+});

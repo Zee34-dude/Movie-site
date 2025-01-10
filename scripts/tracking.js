@@ -1,10 +1,13 @@
 
 import { getMovie } from "./movies.js";
-import { runMenu5Btn,search} from './utils/dropdowns.js'
+import { runMenu5Btn,search,showHeader,renderWatchlist} from './utils/dropdowns.js'
 import { addToWatchlist, watchlist, removeFromWatchlist } from "./watchlist.js";
+import { renderHeaderSummary } from "./utils/header.js";
+document.querySelector('header').innerHTML=renderHeaderSummary()
 const url = new URL(window.location.href);
 const movieId = url.searchParams.get('movieId')
 const movie = getMovie(movieId);
+
 runMenu5Btn()
 function renderMoviePage(){
 let movieSummary = ''
@@ -126,18 +129,31 @@ watchBtn.addEventListener('click', () => {
   const {movieId} = watchBtn.dataset
     if(activeColor.classList.contains('active')){
       activeColor.classList.remove('active')
+      renderWatchlist()
       removeFromWatchlist(movieId)
       renderMoviePage()
     }
     else{
       activeColor.classList.add('active')
+      renderWatchlist()
       addToWatchlist(movieId)
       renderMoviePage()
     }
 
 });
 };
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = document.body.dataset.page;
+  console.log(currentPage)
+  const activeLink = document.getElementById(currentPage);
+  if (activeLink) {
+      activeLink.classList.add('active');
+  }
+});
+
+showHeader()
 renderMoviePage()
 search()
+renderWatchlist()
 
 

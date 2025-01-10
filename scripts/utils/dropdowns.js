@@ -98,7 +98,7 @@ export function runMenu5Btn() {
   });
 
   document.querySelector('.hamburger').addEventListener('click', () => {
-    document.querySelector('.nav-bar').classList.toggle('active')
+    document.querySelector('.nav-container').classList.toggle('active')
   });
 };
 export function search() {
@@ -113,4 +113,17 @@ export function search() {
 export function renderWatchlist() {
   const watchlist = JSON.parse(localStorage.getItem("watchlist"));
   document.querySelector('.watchlist-count').innerHTML = `${watchlist.length}`
+}
+export function showHeader() {
+  const header = document.querySelector('header');
+  const scrollPosition = 200; // Adjust this value to your desired scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= scrollPosition) {
+      header.classList.add('fixed-header');
+
+    } else {
+      header.classList.remove('fixed-header');
+    }
+  });
+
 }

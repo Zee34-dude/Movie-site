@@ -17,6 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Overpass', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -39,7 +40,8 @@ header {
   /* Fixed position */
   top: 0;
   /* Stick to the top */
-  width: 100%;
+  left: 0;
+  right: 0;
   /* Full width */
   height: 70px;
   background-color: rgba(0, 0, 0, 0.795);
@@ -70,8 +72,6 @@ nav {
 
 nav ul {
   display: flex;
-  width: 75%;
-  justify-content: center;
   align-items: center;
 
 }
@@ -134,12 +134,28 @@ nav ul a {
   font-family: 'Overpass', sans-serif;
 
 }
-.nav-btn{
+
+.nav-bar {
+  margin-left: 30px;
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+}
+
+.nav-btn {
   position: relative;
 }
-.watchlist-count{
+
+.myLink.active {
+  color: #E90101;
+}
+
+.watchlist-count {
   position: absolute;
-  background-color:#E50914;;
+  background-color: #E50914;
+  ;
   width: 20px;
   height: 20px;
   right: 5px;
@@ -149,8 +165,9 @@ nav ul a {
   font-size: 1rem;
 
 }
+
 .right-section {
-  padding-left: 100px;
+  margin-left: 20%;
 }
 
 .right-section li a {
@@ -169,22 +186,23 @@ nav ul a {
   height: 1em;
 }
 
-.drop-down {
+.input-dropdown {
   position: absolute;
   top: 30px;
-  left: 70px;
+ 
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  left: -50px;
+  top: 50px;
+  width: 270px;
 }
 
-.genre-drop-down {
-  left: -40px;
-}
 
-.drop-down.active {
+
+.input-dropdown.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -234,15 +252,12 @@ nav ul a {
 
 }
 
-.input-dropdown {
-  position: absolute;
-  left: -40px;
-  top: 50px;
-  width: 25vw;
-}
 
-.fa-user:before {
-  content: "\f007";
+
+.bi-person-fill::before {
+  content: " \F4DA";
+  height: 20px;
+  width: 20px;
 }
 
 .search-input {
@@ -264,7 +279,7 @@ nav ul a {
 
 @media only screen and (max-width:1200px) {
   header {
-    z-index: 2;
+    z-index: 1001;
     position: absolute;
     top: 30px;
     left: 5%;
@@ -277,12 +292,12 @@ nav ul a {
 
   }
 
-  .nav-bar.active {
-    top: 60px;
+  .nav-container.active {
+    top: 71px;
 
   }
 
-  .nav-bar {
+  .nav-container {
     z-index: 10;
     position: absolute;
     top: -10000px;
@@ -295,6 +310,13 @@ nav ul a {
     background-color: #2b3035;
     align-items: flex-start;
     transition: 0.1s ease-in;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: flex-start;
   }
 
   .logo {
@@ -310,7 +332,7 @@ nav ul a {
     position: absolute;
     left: 0px;
     top: 50px;
-    width: 25vw;
+    width: 270px;
   }
 
 
@@ -385,6 +407,14 @@ nav ul a {
 
   .right-section {
     padding-left: 0;
+    margin: 0;
+
+  }
+
+  .right-section ul {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
   }
 
   .right-section li a {
@@ -392,9 +422,10 @@ nav ul a {
     color: white;
   }
 
-  .genre-drop-down {
-    left: -70px;
+
+ 
+
+  .grab-deal {
+    font-size: 30px;
   }
 }
-
-;

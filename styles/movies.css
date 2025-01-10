@@ -119,6 +119,9 @@ svg {
 }
 
 .filter-div {
+  display: flex;
+  gap: 15px;
+  align-items: center;
   gap: 0;
 }
 
@@ -128,23 +131,53 @@ svg {
   /* z-index: 1000; */
 }
 
-
-.drop-down {
+.genre-drop-down{
   position: absolute;
   top: 30px;
-  left: 70px;
+  left: -93px;
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-
-.genre-drop-down {
-  left: 40px;
+.genre-drop-down.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  display: block;
 }
 
-.drop-down.active {
+.menu-drop {
+  position: absolute;
+  top: 30px;
+  left: -93px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+}
+
+.sort-by-drop {
+  position: absolute;
+  top: 30px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.sort-by-drop.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-drop.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -202,13 +235,13 @@ svg {
   position: absolute;
   left: -40px;
   top: 50px;
-  width: 25vw;
+  width: 270px;
 
 }
 
 .rating-selector {
   position: fixed;
-  width: 400px;
+  width: 300px;
   background-color: #212529;
   list-style: none;
   padding-top: 10px;
@@ -218,6 +251,7 @@ svg {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .slider-container {
@@ -322,6 +356,11 @@ svg {
   margin-top: 70px;
 }
 
+.filter-bar_2 {
+  display: flex;
+  width: 100%;
+}
+
 .reset-btn {
   font-size: 1.2rem;
   color: #727f92;
@@ -339,15 +378,21 @@ svg {
   color: #727f92;
 }
 
+.more-vert {
+  display: none;
+}
+
 .flex-align {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .filter-container {
   display: flex;
   gap: 16px;
   margin-right: 20px;
+  width: 312px;
 }
 
 .filter-option.active {
@@ -383,12 +428,12 @@ svg {
 
 @media only screen and (max-width:1200px) {
   main {
-    padding: 90px 20px;
+    padding: 90px 30px;
   }
 
   .grid-display {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 100px;
     margin-top: 20px;
     color: #727f92;
@@ -404,8 +449,6 @@ svg {
 }
 
 @media only screen and (max-width:1024px) {
-
-
   .more-movies {
     margin: 0;
     padding: 0;
@@ -416,9 +459,6 @@ svg {
     margin-left: 10px;
   }
 
-  .filter-div {
-    display: none;
-  }
 
   .sort-div {
     font-size: 16px;
@@ -432,10 +472,6 @@ svg {
     font-size: 14px;
   }
 
-  .rating-selector {
-    width: 300px;
-    left: -110px;
-  }
 
   .grid-display {
     display: grid;
@@ -468,17 +504,71 @@ svg {
 
 }
 
+@media only screen and (max-width:900px) {
+  .filter-bar_2 {
+    position: absolute;
+    left: -10px;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: opacity 0.6s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 3000;
+    padding: 20px 0 0 20px;
+  }
+
+  .more-vert {
+    display: block;
+    margin-left: auto;
+    position: relative;
+  }
+
+  .filter-bar_2.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 50%;
+    align-items: flex-start;
+    background-color: #212529;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    left: 0px;
+    top: 60px;
+    transform: translateX(0); 
+    visibility: visible;
+  
+  }
+  .type-selection{
+    padding: 20px 10px;
+  }
+  .filter-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .flex-align {}
+
+  .reset-btn {
+    margin-inline-start: 10px;
+  }
+
+  .menu-drop {
+    left: 70px;
+  }
+
+  .genre-drop-down {
+    left: 0;
+  }
+}
+
 @media only screen and (max-width:768px) {
-
-
   .more-movies {
     margin: 0;
     padding: 0;
   }
 
-
   .filter-container {
     margin-left: 10px;
+    width: 100%;
   }
 
   .sort-div {
@@ -493,10 +583,6 @@ svg {
     font-size: 14px;
   }
 
-  .rating-selector {
-    width: 300px;
-    left: -110px;
-  }
 
   .grid-display {
     display: grid;
@@ -528,6 +614,8 @@ svg {
   }
 
 }
+
+
 @media only screen and (max-width:500px) {
   .grid-display {
     display: grid;
@@ -538,6 +626,11 @@ svg {
     font-family: inherit;
 
   }
+
+  .sort-by-drop {
+    left: -50px;
+  }
+
 }
 
 @media only screen and (max-width:425px) {
@@ -548,6 +641,7 @@ svg {
 
   .filter-container {
     margin-left: 10px;
+    width: 100%;
   }
 
   .sort-div {
@@ -562,10 +656,6 @@ svg {
     font-size: 14px;
   }
 
-  .rating-selector {
-    width: 300px;
-    left: -110px;
-  }
 
   .grid-display {
     display: grid;
@@ -596,12 +686,16 @@ svg {
     font-size: 14px;
   }
 
+  .menu-drop {
+    left: -8px;
+  }
 }
 
 @media only screen and (max-width:375px) {
   main {
     padding: 90px 30px;
   }
+
   .more-movies {
     margin: 0;
     padding: 0;
@@ -621,11 +715,6 @@ svg {
   .js-sorted-by {
     word-wrap: nowrap;
     font-size: 14px;
-  }
-
-  .rating-selector {
-    width: 300px;
-    left: -110px;
   }
 
   .grid-display {
@@ -688,11 +777,6 @@ svg {
 
   .type-selection {
     font-size: 14px;
-  }
-
-  .rating-selector {
-    width: 300px;
-    left: -110px;
   }
 
   .grid-display {

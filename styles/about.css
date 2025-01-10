@@ -1,0 +1,24 @@
+.clr-img-fix {
+  background-image: url('../images/about-top-img.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  filter: brightness(50%);
+  
+
+}
+.info-row{
+  padding: 150px 100px 150px;
+
+}
+.row-content{
+  color: white;
+
+}
+.row-content>h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.hme-abt{
+  font-size: 1.2rem;
+}
