@@ -174,7 +174,6 @@
   color: #E90101;
   font-weight: 800;
   font-size: 1.2rem;
-  text-align: center;
 }
 
 .details {
@@ -343,10 +342,13 @@
 }
 
 .information {
+  
   padding: 30px 100px;
 
 }
-
+.subscription-title{
+  text-align: center;
+}
 .grab-deal {
   text-align: center;
   color: white;
@@ -406,8 +408,7 @@
 
 .ctact-img-container {
   position: relative;
-  width: 45%;
-  height: 600px;
+  height: 418px;
 }
 
 .color {

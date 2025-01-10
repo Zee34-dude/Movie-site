@@ -8,7 +8,7 @@ export function renderHeaderSummary() {
 
    ` <nav>
       <div class="logo">
-        <div class="box"></div>Raven
+        <div class="box"></div>Climax
       </div>
       <span class='nav-container'>
         <ul class="nav-bar">

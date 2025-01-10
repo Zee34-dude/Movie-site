@@ -395,12 +395,12 @@ svg {
   width: 312px;
 }
 
-.filter-option.active {
+.filter-option.action {
   color: white;
   transition: 0.5s ease;
 }
 
-.filter-option.active:hover {
+.filter-option.action:hover {
   color: white;
 }
 

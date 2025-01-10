@@ -1,6 +1,6 @@
 import { movies } from "./movies.js";
 import { search } from "./utils/dropdowns.js";
-import { runMenu5Btn, showHeader } from "./utils/dropdowns.js";
+import { runMenu5Btn, showHeader,renderWatchlist } from "./utils/dropdowns.js";
 import { renderHeaderSummary } from "./utils/header.js";
 const divs = document.getElementById('div-container')
 const slides = document.querySelectorAll('.slide-1');
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       activeLink.classList.add('active');
   }
 });
-
+renderWatchlist()
 //factorials
 /*let n=5
 let result=1
