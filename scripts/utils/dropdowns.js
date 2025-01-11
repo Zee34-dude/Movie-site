@@ -12,6 +12,7 @@ export function runDropDownBtn() {
   const menu4Content = document.getElementById('menu4-content');
   const menu5Content = document.getElementById('menu5-content');
   const overlay = document.querySelector('.overlay')
+
   // Function to toggle dropdown visibility
   function toggleDropdown(menuContent) {
     // Close both dropdowns
@@ -80,6 +81,7 @@ export function runDropDownBtn() {
     menu3Content.classList.remove('active');
     overlay.classList.remove('active')
 
+
     if (!menu4Btn.contains(event.target) && !menu4Content.contains(event.target)) {
       menu4Content.classList.remove('active')
     }
@@ -91,15 +93,20 @@ export function runMenu5Btn() {
   menu5Btn.addEventListener('click', () => {
     menu5Content.classList.toggle('active');
   });
+  const navContainer = document.querySelector('.nav-container')
   document.addEventListener('click', (event) => {
-    if (!menu5Btn.contains(event.target) && !menu5Content.contains(event.target)) {
+    if (!menu5Btn.contains(event.target) && !menu5Content.contains(event.target) && !navContainer.contains(event.target)&&!hamburger.contains(event.target)) {
       menu5Content.classList.remove('active')
+      navContainer.classList.remove('active')
+      console.log('i')
     }
   });
 
-  document.querySelector('.hamburger').addEventListener('click', () => {
-    document.querySelector('.nav-container').classList.toggle('active')
-  });
+  const hamburger =document.querySelector('.hamburger');
+    
+    hamburger.addEventListener('click', () => {
+      document.querySelector('.nav-container').classList.toggle('active')
+    });
 };
 export function search() {
   document.addEventListener('keydown', (event) => {

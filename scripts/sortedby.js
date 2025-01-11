@@ -58,7 +58,7 @@ function updateURl(param, value) {
   const url = new URL(window.location);
   url.searchParams.set(param, value);
   // Update the URL and reload the page
-  window.location.href = url.toString();
+  window.location.href = url;
   // history.pushState({}, '', url)
 }
 function getQueryParam(name) {

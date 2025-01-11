@@ -145,6 +145,7 @@ nav ul a {
 }
 
 .nav-btn {
+
   position: relative;
 }
 
@@ -189,7 +190,7 @@ nav ul a {
 .input-dropdown {
   position: absolute;
   top: 30px;
- 
+
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
@@ -317,6 +318,7 @@ nav ul a {
     flex-direction: column;
     margin: 0;
     align-items: flex-start;
+    width: 100%;
   }
 
   .logo {
@@ -389,25 +391,39 @@ nav ul a {
     background-color: rgba(34, 34, 34, 0.856);
     transform: rotate(90deg);
   }
-
-  nav ul li {
+  .nav-btn{
     list-style: none;
-    padding: 10px 20px;
+    padding: 0;
     color: white;
     font-family: sans-serif;
     font-size: 1.125em;
-
+    width: 100%;
   }
 
-  nav ul a {
+
+  nav li:hover {
+    background-color: #6263668e;
+  }
+
+  .nav-btn a {
+    display: block;
     color: white;
     text-decoration: none;
     font-family: 'Overpass', sans-serif;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .myLink {
+    display:block;
+    width: 100%;
+    height: 100%;
   }
 
   .right-section {
     padding-left: 0;
     margin: 0;
+    width: 100%;
 
   }
 
@@ -415,7 +431,12 @@ nav ul a {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
+    width: 100%;
   }
+ .right-section ul li{
+  padding: 10px 20px ;
+  width: 100%;
+ }
 
   .right-section li a {
     text-decoration: none;
@@ -423,9 +444,14 @@ nav ul a {
   }
 
 
- 
+
 
   .grab-deal {
     font-size: 30px;
+  }
+
+  .watchlist-count {
+    top: -4px;
+    left: 89px;
   }
 }
