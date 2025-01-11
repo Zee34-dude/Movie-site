@@ -1,4 +1,4 @@
-import { watchlist } from "../watchlist";
+
 export function runDropDownBtn() {
   // Get buttons and dropdowns
   const menu1Btn = document.getElementById('menu1-btn');

@@ -3,11 +3,13 @@ import { getMovie} from "./movies.js"
 import { removeFromWatchlist} from "./watchlist.js";
 import {search,runMenu5Btn,renderWatchlist,showHeader} from "./utils/dropdowns.js";
 import { renderHeaderSummary } from "./utils/header.js";
-import { watchlist } from "./watchlist.js";
+
  
 document.querySelector('header').innerHTML=renderHeaderSummary()
 function renderWatchlistSummary() {
- 
+  const watchlist = JSON.parse(localStorage.getItem("watchlist"));
+  console.log(watchlist)
+
   let watchlistSummary = '';
   
   watchlist.forEach((movie, index) => {
