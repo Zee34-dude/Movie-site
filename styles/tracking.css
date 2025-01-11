@@ -233,9 +233,11 @@ iframe {
   font-size: 16px;
   pointer-events: none;
 }
-.watchlist-tooltip.active{
+
+.watchlist-tooltip.active {
   right: -285%;
 }
+
 .watchlist-tooltip::before {
   content: '';
   position: absolute;
@@ -279,4 +281,30 @@ iframe {
 
 .ribbon.active {
   color: #e50914;
+}
+
+iframe {
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .section-1 {
+    padding: 250px 30px;
+  }
+  .watchlist-tooltip{
+    right: -83%;
+  }
+}
+@media only screen and (max-width:600px) {
+ .mv-summary-container{
+  display: flex;
+  flex-direction: column;
+ }
+ 
+  .image-container{
+  min-width: 200px;
+ }
+ .option-list{
+  flex-wrap: wrap;
+ }
 }
