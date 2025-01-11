@@ -58,9 +58,15 @@ function updateURl(param, value) {
   const url = new URL(window.location);
   url.searchParams.set(param, value);
   // Update the URL and reload the page
-  window.location.href = url;
-  // history.pushState({}, '', url)
+  // window.location.href = url;
+  // window.history.replaceState({}, "", url);
+ window.history.pushState({}, '', url)
 }
+// window.addEventListener("DOMContentLoaded", updateURl);
+
+// Reinitialize slider on window resize
+window.addEventListener("resize", updateURl);
+window.addEventListener("resize",getQueryParam);
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(name);
@@ -233,7 +239,7 @@ console.log(movies)
     valueDisplay.textContent = currentValue
     localStorage.setItem('Value', JSON.stringify(currentValue));
   });
-  slider.addEventListener('mouseup', () => {
+  slider.addEventListener('click', () => {
     updateURl('rating', slider.value)
 
   })
@@ -256,7 +262,7 @@ console.log(movies)
     valueDisplay.textContent = currentValue
     localStorage.setItem('sliderValue', JSON.stringify(currentValue));
   });
-  slider1.addEventListener('mouseup', () => {
+  slider1.addEventListener('click', () => {
     updateURl('year', slider1.value)
   })
 }
