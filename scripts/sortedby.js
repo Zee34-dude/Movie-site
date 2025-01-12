@@ -219,7 +219,7 @@ console.log(movies)
 {
   const slider = document.getElementById('slider')
   const valueDisplay = document.getElementById('display')
-  valueDisplay.textContent = slider.value
+ 
   window.addEventListener('load', () => {
     const savedValue = JSON.parse(localStorage.getItem('Value'));
 
@@ -232,9 +232,12 @@ console.log(movies)
     const currentValue = slider.value
     valueDisplay.textContent = currentValue
     localStorage.setItem('Value', JSON.stringify(currentValue));
-    updateURl('rating', slider.value)
+    
 
   });
+  slider.addEventListener('mouseup', () => {
+    updateURl('rating', slider.value)
+  })
 }
 
 
@@ -254,7 +257,7 @@ console.log(movies)
     valueDisplay.textContent = currentValue
     localStorage.setItem('sliderValue', JSON.stringify(currentValue));
   });
-  slider1.addEventListener('mouseup', () => {
+  slider1.addEventListener('mouseleave', () => {
     updateURl('year', slider1.value)
   })
 }
