@@ -235,7 +235,7 @@ console.log(movies)
     
 
   });
-  slider.addEventListener('mouseup', () => {
+  slider.addEventListener('input', () => {
     updateURl('rating', slider.value)
   })
 }
@@ -257,7 +257,7 @@ console.log(movies)
     valueDisplay.textContent = currentValue
     localStorage.setItem('sliderValue', JSON.stringify(currentValue));
   });
-  slider1.addEventListener('mouseleave', () => {
+  slider1.addEventListener('input', () => {
     updateURl('year', slider1.value)
   })
 }
