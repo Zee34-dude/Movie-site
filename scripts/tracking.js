@@ -129,14 +129,14 @@ watchBtn.addEventListener('click', () => {
   const {movieId} = watchBtn.dataset
     if(activeColor.classList.contains('active')){
       activeColor.classList.remove('active')
-      renderWatchlist()
       removeFromWatchlist(movieId)
+      renderWatchlist()
       renderMoviePage()
     }
     else{
       activeColor.classList.add('active')
-      renderWatchlist()
       addToWatchlist(movieId)
+      renderWatchlist()
       renderMoviePage()
     }
 
