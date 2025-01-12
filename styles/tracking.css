@@ -308,4 +308,7 @@ iframe {
  .option-list{
   flex-wrap: wrap;
  }
+ .mv-description{
+  width: 100%;
+ }
 }
