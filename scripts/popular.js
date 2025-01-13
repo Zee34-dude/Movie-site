@@ -116,10 +116,10 @@ function displayItem(item) {
     
         </div>
       `
-
+      document.querySelector('.js-grid-display').innerHTML = summary
   });
 
-  document.querySelector('.js-grid-display').innerHTML = summary
+ 
   document.querySelector('.movies-count').innerHTML = `${item.length} titles`
   const addBtn2 = document.querySelectorAll('.js-watch-btn');
   addBtn2.forEach((btn) => {
